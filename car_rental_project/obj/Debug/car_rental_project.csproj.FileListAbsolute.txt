@@ -1,0 +1,10 @@
+C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\bin\Debug\car_rental_project.exe.config
+C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\bin\Debug\car_rental_project.exe
+C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\bin\Debug\car_rental_project.pdb
+C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.csprojAssemblyReference.cache
+C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.LoginForm.resources
+C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.Properties.Resources.resources
+C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.csproj.GenerateResource.cache
+C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.csproj.CoreCompileInputs.cache
+C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.exe
+C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.pdb
