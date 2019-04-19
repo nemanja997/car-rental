@@ -13,7 +13,7 @@ namespace car_rental_project
 {
     public partial class LoginForm : Form
     {
-        Korisnik k;
+        Korisnik korisnik;
         public LoginForm()
         {
             InitializeComponent();
@@ -21,14 +21,16 @@ namespace car_rental_project
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Administrator uBazu = new Administrator("nemanja","sifra");
+            KorisnikRepository.napraviKorisnika(uBazu);
 
-            if (!TBoxKorisnickoIme.Text.Trim().Equals("") && !TBoxLozinka.Text.Trim().Equals(""))
+            if ( TBoxKorisnickoIme.Text.Trim().Length !=0 && TBoxLozinka.Text.Trim().Length !=0 )
             {
-                k = KorisnikRepository.pronadjiKorisnika(TBoxKorisnickoIme.Text, TBoxLozinka.Text);
+                korisnik = KorisnikRepository.pronadjiKorisnika(TBoxKorisnickoIme.Text, TBoxLozinka.Text);
 
-                if (k != null)
+                if ( korisnik != null )
                 {
-                    if (k is Kupac)
+                    if (korisnik is Kupac)
                     {
                         MessageBox.Show("Uspesno ste se ulogovali kao korisnik.");
                         Form kupacForm = new KupacForm();

@@ -23,5 +23,6 @@ namespace car_rental_project
         public string KorisnickoIme { get => korisnickoIme; set => korisnickoIme = value; }
         public string Lozinka { get => lozinka; set => lozinka = value; }
 
+        
     }
 }

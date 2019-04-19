@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace car_rental_project.RadSaFajlovima
 {
@@ -14,13 +15,20 @@ namespace car_rental_project.RadSaFajlovima
 
         static public void napraviKorisnika(Korisnik korisnik)
         {
-            if (!Directory.Exists(@"Data")){
-                System.IO.Directory.CreateDirectory(@"Data");
+            string path = "Data\\" + korisnik.KorisnickoIme + ".bin";
+            if ( !Directory.Exists("Data") ){
+                System.IO.Directory.CreateDirectory("Data");
             }
-            Stream stream1 = File.Open(@"Data\" +korisnik.KorisnickoIme + ".bin", FileMode.Create);
-            BinaryFormatter bf = new BinaryFormatter();
-            bf.Serialize(stream1, korisnik);
-            stream1.Close();
+            if ( !File.Exists(path) ) {
+                Stream stream = File.Open(path, FileMode.Create);
+                BinaryFormatter bf = new BinaryFormatter();
+                bf.Serialize(stream, korisnik);
+                stream.Close();
+            }
+            else {
+                MessageBox.Show("Korisnik sa unetim korisnickim imenom vec postoji. Molimo odaberite drugo korisnicko ime.");
+            }
+            
            
         }
 
@@ -37,21 +45,29 @@ namespace car_rental_project.RadSaFajlovima
         static public Korisnik pronadjiKorisnika(string korisnickoIme, string lozinka)
         {
             Korisnik korisnik;
-            Stream stream2;
+            Stream stream;
             BinaryFormatter bf = new BinaryFormatter();
 
-            if (!Directory.Exists(@"Data")){
-                System.IO.Directory.CreateDirectory(@"Data");
+            if ( !Directory.Exists("Data") ){
+                System.IO.Directory.CreateDirectory("Data");
             }
             
-            string[] filePaths = Directory.GetFiles(@"Data"); 
+            string[] filePaths = Directory.GetFiles("Data"); //Uzmi sve fajlove iz Data foldera
             foreach (string filePath in filePaths) {
-                stream2 = File.Open(filePath, FileMode.Open);
-                korisnik = (Korisnik)bf.Deserialize(stream2);
-                stream2.Close();
-                if (korisnik.KorisnickoIme.Equals(korisnickoIme) && korisnik.Lozinka.Equals(lozinka)) {
-                    return korisnik;
+
+                if ( File.Exists(filePath) )
+                {
+                    stream = File.Open(filePath, FileMode.Open);
+                    korisnik = (Korisnik)bf.Deserialize(stream);
+                    stream.Close();
+                    if ( korisnik.KorisnickoIme.Equals(korisnickoIme) && korisnik.Lozinka.Equals(lozinka) )
+                    {
+                        MessageBox.Show("Uspesno logovanje");
+                        return korisnik;
+                    }
                 }
+                
+                
             }
             return null;
         }
