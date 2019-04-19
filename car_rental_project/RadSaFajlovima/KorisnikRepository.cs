@@ -12,6 +12,8 @@ namespace car_rental_project.RadSaFajlovima
 {
     class KorisnikRepository
     {
+        static Stream stream;
+        static BinaryFormatter bf = new BinaryFormatter();
 
         static public void napraviKorisnika(Korisnik korisnik)
         {
@@ -20,8 +22,7 @@ namespace car_rental_project.RadSaFajlovima
                 System.IO.Directory.CreateDirectory("Data");
             }
             if ( !File.Exists(path) ) {
-                Stream stream = File.Open(path, FileMode.Create);
-                BinaryFormatter bf = new BinaryFormatter();
+                stream = File.Open(path, FileMode.Create);
                 bf.Serialize(stream, korisnik);
                 stream.Close();
             }
@@ -45,14 +46,11 @@ namespace car_rental_project.RadSaFajlovima
         static public Korisnik pronadjiKorisnika(string korisnickoIme, string lozinka)
         {
             Korisnik korisnik;
-            Stream stream;
-            BinaryFormatter bf = new BinaryFormatter();
+            string[] filePaths = Directory.GetFiles("Data"); //Uzmi sve fajlove iz Data foldera
 
             if ( !Directory.Exists("Data") ){
                 System.IO.Directory.CreateDirectory("Data");
             }
-            
-            string[] filePaths = Directory.GetFiles("Data"); //Uzmi sve fajlove iz Data foldera
             foreach (string filePath in filePaths) {
 
                 if ( File.Exists(filePath) )
@@ -70,6 +68,30 @@ namespace car_rental_project.RadSaFajlovima
                 
             }
             return null;
+        }
+        public static List<Kupac> vratiSveKupce() {
+
+            Korisnik korisnik;
+            List<Kupac> listaKupaca= new List<Kupac>();
+            string[] filePaths = Directory.GetFiles("Data"); //Uzmi sve fajlove iz Data foldera
+
+            if (!Directory.Exists("Data"))
+            {
+                System.IO.Directory.CreateDirectory("Data");
+            }
+            foreach (string filePath in filePaths)
+            {
+                if (File.Exists(filePath))
+                {
+                    stream = File.Open(filePath, FileMode.Open);
+                    korisnik = (Korisnik)bf.Deserialize(stream);
+                    stream.Close();
+                    if (korisnik is Kupac) {
+                        listaKupaca.Add((Kupac)korisnik);
+                    }
+                }
+            }
+            return listaKupaca;
         }
     }
 }

@@ -21,8 +21,7 @@ namespace car_rental_project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Administrator uBazu = new Administrator("nemanja","sifra");
-            KorisnikRepository.napraviKorisnika(uBazu);
+            
 
             if ( TBoxKorisnickoIme.Text.Trim().Length !=0 && TBoxLozinka.Text.Trim().Length !=0 )
             {
