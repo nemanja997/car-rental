@@ -25,6 +25,7 @@ namespace car_rental_project.RadSaFajlovima
                 stream = File.Open(path, FileMode.Create);
                 bf.Serialize(stream, korisnik);
                 stream.Close();
+                MessageBox.Show("Uspesno ste dodali novog kupca!");
             }
             else {
                 MessageBox.Show("Korisnik sa unetim korisnickim imenom vec postoji. Molimo odaberite drugo korisnicko ime.");

@@ -10,6 +10,7 @@ namespace car_rental_project
     [Serializable()]
     class Kupac : Korisnik
     {
+        static int nextId = 1;
         private int id;
         private string ime;
         private string prezime;
@@ -17,9 +18,9 @@ namespace car_rental_project
         private string datumRodjenja;
         private string telefon;
 
-        public Kupac(string korisnickoIme, string lozinka, int id, string ime, string prezime, string jmbg, string datumRodjenja, string telefon) : base(korisnickoIme, lozinka)
+        public Kupac(string korisnickoIme, string lozinka, string ime, string prezime, string jmbg, string datumRodjenja, string telefon) : base(korisnickoIme, lozinka)
         {
-            this.id = id;
+            this.id = nextId++;
             this.ime = ime;
             this.prezime = prezime;
             this.jmbg = jmbg;
@@ -37,7 +38,7 @@ namespace car_rental_project
 
         public override string ToString()
         {
-            return Id + ", " +"Korisnicko ime: " + KorisnickoIme;
+            return "Korisnicko ime: " + KorisnickoIme +", Ime i prezime:" + Ime + " " + Prezime;
         }
     }
 }
