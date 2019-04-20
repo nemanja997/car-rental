@@ -74,7 +74,7 @@ namespace car_rental_project
         {
             Kupac kupac = (Kupac)listBox1.SelectedItem;
             
-            KorisnikRepository.obrisiKorisnika(kupac.KorisnickoIme);
+            Korisnik.obrisiKorisnika(kupac.KorisnickoIme);
             listBox1.Items.Remove(listBox1.SelectedItem);
         }
     }

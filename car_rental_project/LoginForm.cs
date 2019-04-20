@@ -25,7 +25,7 @@ namespace car_rental_project
 
             if ( TBoxKorisnickoIme.Text.Trim().Length !=0 && TBoxLozinka.Text.Trim().Length !=0 )
             {
-                korisnik = KorisnikRepository.pronadjiKorisnika(TBoxKorisnickoIme.Text, TBoxLozinka.Text);
+                korisnik = Korisnik.pronadjiKorisnika(TBoxKorisnickoIme.Text, TBoxLozinka.Text);
 
                 if ( korisnik != null )
                 {

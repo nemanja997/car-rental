@@ -58,6 +58,7 @@
     <Compile Include="KupacForm.Designer.cs">
       <DependentUpon>KupacForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modeli\Automobil.cs" />
     <Compile Include="RadSaFajlovima\KorisnikRepository.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>

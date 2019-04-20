@@ -12,8 +12,7 @@ namespace car_rental_project
     [Serializable()]
     class Kupac : Korisnik
     {
-        static int nextId = 1;
-        private int id;
+        
         private string ime;
         private string prezime;
         private string jmbg;
@@ -22,7 +21,6 @@ namespace car_rental_project
 
         public Kupac(string korisnickoIme, string lozinka, string ime, string prezime, string jmbg, string datumRodjenja, string telefon) : base(korisnickoIme, lozinka)
         {
-            this.id = nextId++;
             this.ime = ime;
             this.prezime = prezime;
             this.jmbg = jmbg;
@@ -31,7 +29,6 @@ namespace car_rental_project
         }
         
         
-        public int Id { get => id; set => id = value; }
         public string Ime { get => ime; set => ime = value; }
         public string Prezime { get => prezime; set => prezime = value; }
         public string Jmbg { get => jmbg; set => jmbg = value; }

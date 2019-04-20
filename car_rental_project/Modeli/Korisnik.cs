@@ -12,9 +12,11 @@ namespace car_rental_project
     [Serializable()]
     class Korisnik
     {
+        private static int nextId = 1;
         static Stream stream;
         static BinaryFormatter bf = new BinaryFormatter();
 
+        private int id;
         private string korisnickoIme;
         private string lozinka;
 
@@ -24,14 +26,12 @@ namespace car_rental_project
         {
             this.korisnickoIme = korisnickoIme;
             this.lozinka = lozinka;
+            this.id = nextId++;
         }
 
         public string KorisnickoIme { get => korisnickoIme; set => korisnickoIme = value; }
         public string Lozinka { get => lozinka; set => lozinka = value; }
-
-
-
-        
+        public int Id { get => id; set => id = value; }
 
         static public void napraviKorisnika(Korisnik korisnik)
         {
