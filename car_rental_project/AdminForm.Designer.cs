@@ -29,7 +29,29 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.TBoxIzmenaLozinka = new System.Windows.Forms.TextBox();
+            this.TBoxIzmenaKorisnickoIme = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.TBoxDodajLozinka = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.TBoxDodajKorisnickoIme = new System.Windows.Forms.TextBox();
+            this.BtnDodajKupca = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TBoxDodajJMBG = new System.Windows.Forms.TextBox();
+            this.TBoxDodajTelefon = new System.Windows.Forms.TextBox();
+            this.TBoxDodajDatumRodjenja = new System.Windows.Forms.TextBox();
+            this.TBoxDodajPrezime = new System.Windows.Forms.TextBox();
+            this.TBoxDodajIme = new System.Windows.Forms.TextBox();
+            this.BtnIzmeniKupca = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.BtnObrisiKupca = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,28 +63,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TBoxIzmenaIme = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.TBoxDodajIme = new System.Windows.Forms.TextBox();
-            this.TBoxDodajPrezime = new System.Windows.Forms.TextBox();
-            this.TBoxDodajDatumRodjenja = new System.Windows.Forms.TextBox();
-            this.TBoxDodajTelefon = new System.Windows.Forms.TextBox();
-            this.TBoxDodajJMBG = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.TBoxIzmenaKorisnickoIme = new System.Windows.Forms.TextBox();
-            this.TBoxIzmenaLozinka = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.TBoxDodajKorisnickoIme = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.TBoxDodajLozinka = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -74,9 +77,9 @@
             this.groupBox1.Controls.Add(this.TBoxIzmenaLozinka);
             this.groupBox1.Controls.Add(this.TBoxIzmenaKorisnickoIme);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.BtnIzmeniKupca);
             this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.BtnObrisiKupca);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -95,6 +98,194 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kupac";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(462, 18);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(50, 15);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "Lozinka";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(304, 18);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(91, 15);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Korisnicko ime:";
+            // 
+            // TBoxIzmenaLozinka
+            // 
+            this.TBoxIzmenaLozinka.Location = new System.Drawing.Point(462, 36);
+            this.TBoxIzmenaLozinka.Name = "TBoxIzmenaLozinka";
+            this.TBoxIzmenaLozinka.Size = new System.Drawing.Size(149, 21);
+            this.TBoxIzmenaLozinka.TabIndex = 17;
+            // 
+            // TBoxIzmenaKorisnickoIme
+            // 
+            this.TBoxIzmenaKorisnickoIme.Location = new System.Drawing.Point(307, 36);
+            this.TBoxIzmenaKorisnickoIme.Name = "TBoxIzmenaKorisnickoIme";
+            this.TBoxIzmenaKorisnickoIme.Size = new System.Drawing.Size(150, 21);
+            this.TBoxIzmenaKorisnickoIme.TabIndex = 16;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.TBoxDodajLozinka);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.TBoxDodajKorisnickoIme);
+            this.groupBox2.Controls.Add(this.BtnDodajKupca);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.TBoxDodajJMBG);
+            this.groupBox2.Controls.Add(this.TBoxDodajTelefon);
+            this.groupBox2.Controls.Add(this.TBoxDodajDatumRodjenja);
+            this.groupBox2.Controls.Add(this.TBoxDodajPrezime);
+            this.groupBox2.Controls.Add(this.TBoxDodajIme);
+            this.groupBox2.Location = new System.Drawing.Point(618, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(320, 221);
+            this.groupBox2.TabIndex = 15;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Dodaj kupca";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(150, 26);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(53, 15);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "Lozinka:";
+            // 
+            // TBoxDodajLozinka
+            // 
+            this.TBoxDodajLozinka.Location = new System.Drawing.Point(153, 44);
+            this.TBoxDodajLozinka.Name = "TBoxDodajLozinka";
+            this.TBoxDodajLozinka.Size = new System.Drawing.Size(131, 21);
+            this.TBoxDodajLozinka.TabIndex = 13;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(16, 25);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(91, 15);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Korisnicko ime:";
+            // 
+            // TBoxDodajKorisnickoIme
+            // 
+            this.TBoxDodajKorisnickoIme.Location = new System.Drawing.Point(16, 44);
+            this.TBoxDodajKorisnickoIme.Name = "TBoxDodajKorisnickoIme";
+            this.TBoxDodajKorisnickoIme.Size = new System.Drawing.Size(131, 21);
+            this.TBoxDodajKorisnickoIme.TabIndex = 11;
+            // 
+            // BtnDodajKupca
+            // 
+            this.BtnDodajKupca.Location = new System.Drawing.Point(153, 159);
+            this.BtnDodajKupca.Name = "BtnDodajKupca";
+            this.BtnDodajKupca.Size = new System.Drawing.Size(131, 30);
+            this.BtnDodajKupca.TabIndex = 10;
+            this.BtnDodajKupca.Text = "Dodaj kupca";
+            this.BtnDodajKupca.UseVisualStyleBackColor = true;
+            this.BtnDodajKupca.Click += new System.EventHandler(this.btnDodajKupca_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(13, 146);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(44, 15);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "JMBG:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(150, 107);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 15);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Telefon:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 107);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(94, 15);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "DatumRodjenja";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(150, 65);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(56, 15);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Prezime:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 65);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(31, 15);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Ime:";
+            // 
+            // TBoxDodajJMBG
+            // 
+            this.TBoxDodajJMBG.Location = new System.Drawing.Point(16, 164);
+            this.TBoxDodajJMBG.Name = "TBoxDodajJMBG";
+            this.TBoxDodajJMBG.Size = new System.Drawing.Size(131, 21);
+            this.TBoxDodajJMBG.TabIndex = 4;
+            // 
+            // TBoxDodajTelefon
+            // 
+            this.TBoxDodajTelefon.Location = new System.Drawing.Point(153, 125);
+            this.TBoxDodajTelefon.Name = "TBoxDodajTelefon";
+            this.TBoxDodajTelefon.Size = new System.Drawing.Size(131, 21);
+            this.TBoxDodajTelefon.TabIndex = 3;
+            // 
+            // TBoxDodajDatumRodjenja
+            // 
+            this.TBoxDodajDatumRodjenja.Location = new System.Drawing.Point(16, 125);
+            this.TBoxDodajDatumRodjenja.Name = "TBoxDodajDatumRodjenja";
+            this.TBoxDodajDatumRodjenja.Size = new System.Drawing.Size(131, 21);
+            this.TBoxDodajDatumRodjenja.TabIndex = 2;
+            // 
+            // TBoxDodajPrezime
+            // 
+            this.TBoxDodajPrezime.Location = new System.Drawing.Point(153, 83);
+            this.TBoxDodajPrezime.Name = "TBoxDodajPrezime";
+            this.TBoxDodajPrezime.Size = new System.Drawing.Size(131, 21);
+            this.TBoxDodajPrezime.TabIndex = 1;
+            // 
+            // TBoxDodajIme
+            // 
+            this.TBoxDodajIme.Location = new System.Drawing.Point(16, 83);
+            this.TBoxDodajIme.Name = "TBoxDodajIme";
+            this.TBoxDodajIme.Size = new System.Drawing.Size(131, 21);
+            this.TBoxDodajIme.TabIndex = 0;
+            // 
+            // BtnIzmeniKupca
+            // 
+            this.BtnIzmeniKupca.Location = new System.Drawing.Point(465, 166);
+            this.BtnIzmeniKupca.Name = "BtnIzmeniKupca";
+            this.BtnIzmeniKupca.Size = new System.Drawing.Size(146, 29);
+            this.BtnIzmeniKupca.TabIndex = 13;
+            this.BtnIzmeniKupca.Text = "Izmeni";
+            this.BtnIzmeniKupca.UseVisualStyleBackColor = true;
+            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -104,6 +295,16 @@
             this.listBox1.Size = new System.Drawing.Size(275, 124);
             this.listBox1.TabIndex = 12;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // BtnObrisiKupca
+            // 
+            this.BtnObrisiKupca.Location = new System.Drawing.Point(151, 171);
+            this.BtnObrisiKupca.Name = "BtnObrisiKupca";
+            this.BtnObrisiKupca.Size = new System.Drawing.Size(133, 27);
+            this.BtnObrisiKupca.TabIndex = 14;
+            this.BtnObrisiKupca.Text = "Obrisi";
+            this.BtnObrisiKupca.UseVisualStyleBackColor = true;
+            this.BtnObrisiKupca.Click += new System.EventHandler(this.button2_Click);
             // 
             // label6
             // 
@@ -194,208 +395,41 @@
             this.TBoxIzmenaIme.Size = new System.Drawing.Size(149, 21);
             this.TBoxIzmenaIme.TabIndex = 0;
             // 
-            // button1
+            // groupBox3
             // 
-            this.button1.Location = new System.Drawing.Point(465, 166);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 29);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Izmeni";
-            this.button1.UseVisualStyleBackColor = true;
+            this.groupBox3.Location = new System.Drawing.Point(14, 241);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(938, 72);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Automobili";
             // 
-            // button2
+            // groupBox4
             // 
-            this.button2.Location = new System.Drawing.Point(151, 171);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 27);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Obrisi";
-            this.button2.UseVisualStyleBackColor = true;
+            this.groupBox4.Location = new System.Drawing.Point(14, 320);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(938, 100);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "ponuda";
             // 
-            // groupBox2
+            // groupBox5
             // 
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.TBoxDodajLozinka);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.TBoxDodajKorisnickoIme);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.TBoxDodajJMBG);
-            this.groupBox2.Controls.Add(this.TBoxDodajTelefon);
-            this.groupBox2.Controls.Add(this.TBoxDodajDatumRodjenja);
-            this.groupBox2.Controls.Add(this.TBoxDodajPrezime);
-            this.groupBox2.Controls.Add(this.TBoxDodajIme);
-            this.groupBox2.Location = new System.Drawing.Point(618, 14);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(302, 198);
-            this.groupBox2.TabIndex = 15;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Dodaj kupca";
-            // 
-            // TBoxDodajIme
-            // 
-            this.TBoxDodajIme.Location = new System.Drawing.Point(16, 83);
-            this.TBoxDodajIme.Name = "TBoxDodajIme";
-            this.TBoxDodajIme.Size = new System.Drawing.Size(131, 21);
-            this.TBoxDodajIme.TabIndex = 0;
-            // 
-            // TBoxDodajPrezime
-            // 
-            this.TBoxDodajPrezime.Location = new System.Drawing.Point(153, 83);
-            this.TBoxDodajPrezime.Name = "TBoxDodajPrezime";
-            this.TBoxDodajPrezime.Size = new System.Drawing.Size(131, 21);
-            this.TBoxDodajPrezime.TabIndex = 1;
-            // 
-            // TBoxDodajDatumRodjenja
-            // 
-            this.TBoxDodajDatumRodjenja.Location = new System.Drawing.Point(16, 125);
-            this.TBoxDodajDatumRodjenja.Name = "TBoxDodajDatumRodjenja";
-            this.TBoxDodajDatumRodjenja.Size = new System.Drawing.Size(131, 21);
-            this.TBoxDodajDatumRodjenja.TabIndex = 2;
-            // 
-            // TBoxDodajTelefon
-            // 
-            this.TBoxDodajTelefon.Location = new System.Drawing.Point(153, 125);
-            this.TBoxDodajTelefon.Name = "TBoxDodajTelefon";
-            this.TBoxDodajTelefon.Size = new System.Drawing.Size(131, 21);
-            this.TBoxDodajTelefon.TabIndex = 3;
-            // 
-            // TBoxDodajJMBG
-            // 
-            this.TBoxDodajJMBG.Location = new System.Drawing.Point(16, 164);
-            this.TBoxDodajJMBG.Name = "TBoxDodajJMBG";
-            this.TBoxDodajJMBG.Size = new System.Drawing.Size(131, 21);
-            this.TBoxDodajJMBG.TabIndex = 4;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 65);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 15);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Ime:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(150, 65);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 15);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Prezime:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 107);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 15);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "DatumRodjenja";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(150, 107);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 15);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Telefon:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 146);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 15);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "JMBG:";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(153, 156);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(131, 30);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Dodaj kupca";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // TBoxIzmenaKorisnickoIme
-            // 
-            this.TBoxIzmenaKorisnickoIme.Location = new System.Drawing.Point(307, 36);
-            this.TBoxIzmenaKorisnickoIme.Name = "TBoxIzmenaKorisnickoIme";
-            this.TBoxIzmenaKorisnickoIme.Size = new System.Drawing.Size(150, 21);
-            this.TBoxIzmenaKorisnickoIme.TabIndex = 16;
-            // 
-            // TBoxIzmenaLozinka
-            // 
-            this.TBoxIzmenaLozinka.Location = new System.Drawing.Point(462, 36);
-            this.TBoxIzmenaLozinka.Name = "TBoxIzmenaLozinka";
-            this.TBoxIzmenaLozinka.Size = new System.Drawing.Size(149, 21);
-            this.TBoxIzmenaLozinka.TabIndex = 17;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(304, 18);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(91, 15);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "Korisnicko ime:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(462, 18);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(50, 15);
-            this.label13.TabIndex = 19;
-            this.label13.Text = "Lozinka";
-            // 
-            // TBoxDodajKorisnickoIme
-            // 
-            this.TBoxDodajKorisnickoIme.Location = new System.Drawing.Point(16, 44);
-            this.TBoxDodajKorisnickoIme.Name = "TBoxDodajKorisnickoIme";
-            this.TBoxDodajKorisnickoIme.Size = new System.Drawing.Size(131, 21);
-            this.TBoxDodajKorisnickoIme.TabIndex = 11;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(16, 25);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(91, 15);
-            this.label14.TabIndex = 12;
-            this.label14.Text = "Korisnicko ime:";
-            // 
-            // TBoxDodajLozinka
-            // 
-            this.TBoxDodajLozinka.Location = new System.Drawing.Point(153, 44);
-            this.TBoxDodajLozinka.Name = "TBoxDodajLozinka";
-            this.TBoxDodajLozinka.Size = new System.Drawing.Size(131, 21);
-            this.TBoxDodajLozinka.TabIndex = 13;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(150, 26);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(53, 15);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "Lozinka:";
+            this.groupBox5.Location = new System.Drawing.Point(13, 427);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(939, 100);
+            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Rezervacije";
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 519);
+            this.ClientSize = new System.Drawing.Size(1145, 582);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "AdminForm";
@@ -424,8 +458,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TBoxIzmenaIme;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnIzmeniKupca;
+        private System.Windows.Forms.Button BtnObrisiKupca;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -434,7 +468,7 @@
         private System.Windows.Forms.TextBox TBoxDodajDatumRodjenja;
         private System.Windows.Forms.TextBox TBoxDodajPrezime;
         private System.Windows.Forms.TextBox TBoxDodajIme;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BtnDodajKupca;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label13;
@@ -445,5 +479,8 @@
         private System.Windows.Forms.TextBox TBoxDodajLozinka;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox TBoxDodajKorisnickoIme;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }

@@ -17,7 +17,7 @@ namespace car_rental_project
         public AdminForm()
         {
             InitializeComponent();
-            listaSvihKupaca = KorisnikRepository.vratiSveKupce();
+            listaSvihKupaca = Kupac.vratiSveKupce();
             foreach (Kupac k in listaSvihKupaca) {
                 listBox1.Items.Add(k);
             }
@@ -41,7 +41,7 @@ namespace car_rental_project
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnDodajKupca_Click(object sender, EventArgs e)
         {
             if (TBoxDodajIme.Text.Trim().Length != 0 && TBoxDodajPrezime.Text.Trim().Length != 0 &&
                 TBoxDodajDatumRodjenja.Text.Trim().Length != 0 && TBoxDodajTelefon.Text.Trim().Length != 0 &&
@@ -55,7 +55,7 @@ namespace car_rental_project
                 TBoxDodajJMBG.Text,
                 TBoxDodajDatumRodjenja.Text,
                 TBoxDodajTelefon.Text);
-                KorisnikRepository.napraviKorisnika(noviKupac);
+                Korisnik.napraviKorisnika(noviKupac);
                 listBox1.Items.Add(noviKupac);
          
              
@@ -68,6 +68,14 @@ namespace car_rental_project
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Kupac kupac = (Kupac)listBox1.SelectedItem;
+            
+            KorisnikRepository.obrisiKorisnika(kupac.KorisnickoIme);
+            listBox1.Items.Remove(listBox1.SelectedItem);
         }
     }
 }

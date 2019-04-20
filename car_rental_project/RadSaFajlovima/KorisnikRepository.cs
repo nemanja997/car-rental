@@ -34,12 +34,25 @@ namespace car_rental_project.RadSaFajlovima
            
         }
 
-        static public void obrisiKorisnika(string ime)
+        static public void obrisiKorisnika(string korisnickoIme)
         {
-            
+            string path = "Data\\" + korisnickoIme + ".bin";
+            if (File.Exists(path)){
+
+                try{
+                    File.Delete(path);
+                    MessageBox.Show("Korisnik uspesno obrisan.");
+                }
+                catch (IOException){
+                    MessageBox.Show("Nije uspelo brisanje fajla za trazenog korisnika.");
+                }
+                
+            }else {
+                MessageBox.Show("Ne postoji fajl koji ste pokusali da obrisete.");
+            }
         }
 
-        static public void promeniKorisnika(Korisnik korisnik)
+        static public void izmeniKorisnika(Korisnik korisnik)
         {
             
         }
@@ -64,12 +77,11 @@ namespace car_rental_project.RadSaFajlovima
                         MessageBox.Show("Uspesno logovanje");
                         return korisnik;
                     }
-                }
-                
-                
+                } 
             }
             return null;
         }
+
         public static List<Kupac> vratiSveKupce() {
 
             Korisnik korisnik;

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,6 +41,34 @@ namespace car_rental_project
         public override string ToString()
         {
             return "Korisnicko ime: " + KorisnickoIme +", Ime i prezime:" + Ime + " " + Prezime;
+        }
+
+        public static List<Kupac> vratiSveKupce()
+        {
+            Stream stream;
+            BinaryFormatter bf = new BinaryFormatter();
+            Korisnik korisnik;
+            List<Kupac> listaKupaca = new List<Kupac>();
+            string[] filePaths = Directory.GetFiles("Data"); //Uzmi sve fajlove iz Data foldera
+
+            if (!Directory.Exists("Data"))
+            {
+                System.IO.Directory.CreateDirectory("Data");
+            }
+            foreach (string filePath in filePaths)
+            {
+                if (File.Exists(filePath))
+                {
+                    stream = File.Open(filePath, FileMode.Open);
+                    korisnik = (Korisnik)bf.Deserialize(stream);
+                    stream.Close();
+                    if (korisnik is Kupac)
+                    {
+                        listaKupaca.Add((Kupac)korisnik);
+                    }
+                }
+            }
+            return listaKupaca;
         }
     }
 }
