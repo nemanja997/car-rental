@@ -28,5 +28,6 @@ namespace car_rental_project.Modeli
         public string DatumOd { get => datumOd; set => datumOd = value; }
         public string DatumDo { get => datumDo; set => datumDo = value; }
         public double Cena { get => cena; set => cena = value; }
+
     }
 }

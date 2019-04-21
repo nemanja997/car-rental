@@ -12,7 +12,6 @@ namespace car_rental_project
     [Serializable()]
     class Korisnik
     {
-        private static int nextId = 1;
         static Stream stream;
         static BinaryFormatter bf = new BinaryFormatter();
 
@@ -26,19 +25,19 @@ namespace car_rental_project
         {
             this.korisnickoIme = korisnickoIme;
             this.lozinka = lozinka;
-            this.id = nextId++;
+            this.id = getLastId() + 1;
         }
 
         public string KorisnickoIme { get => korisnickoIme; set => korisnickoIme = value; }
         public string Lozinka { get => lozinka; set => lozinka = value; }
         public int Id { get => id; set => id = value; }
 
-        static public void napraviKorisnika(Korisnik korisnik)
+        static public bool napraviKorisnika(Korisnik korisnik)
         {
-            string path = "Data\\" + korisnik.KorisnickoIme + ".bin";
-            if (!Directory.Exists("Data"))
+            string path = "Data\\Korisnici\\" + korisnik.KorisnickoIme + ".bin";
+            if (!Directory.Exists("Data\\Korisnici"))
             {
-                System.IO.Directory.CreateDirectory("Data");
+                System.IO.Directory.CreateDirectory("Data\\Korisnici");
             }
             if (!File.Exists(path))
             {
@@ -46,10 +45,12 @@ namespace car_rental_project
                 bf.Serialize(stream, korisnik);
                 stream.Close();
                 MessageBox.Show("Uspesno ste dodali novog kupca!");
+                return true;
             }
             else
             {
                 MessageBox.Show("Korisnik sa unetim korisnickim imenom vec postoji. Molimo odaberite drugo korisnicko ime.");
+                return false;
             }
 
 
@@ -57,23 +58,18 @@ namespace car_rental_project
 
         static public void obrisiKorisnika(string korisnickoIme)
         {
-            string path = "Data\\" + korisnickoIme + ".bin";
-            if (File.Exists(path))
-            {
+            string path = "Data\\Korisnici\\" + korisnickoIme + ".bin";
+            if (File.Exists(path)){
 
-                try
-                {
+                try{
                     File.Delete(path);
                     MessageBox.Show("Korisnik uspesno obrisan.");
                 }
-                catch (IOException)
-                {
+                catch (IOException){
                     MessageBox.Show("Nije uspelo brisanje fajla za trazenog korisnika.");
                 }
 
-            }
-            else
-            {
+            }else {
                 MessageBox.Show("Ne postoji fajl koji ste pokusali da obrisete.");
             }
         }
@@ -86,12 +82,12 @@ namespace car_rental_project
         static public Korisnik pronadjiKorisnika(string korisnickoIme, string lozinka)
         {
             Korisnik korisnik;
-            string[] filePaths = Directory.GetFiles("Data"); //Uzmi sve fajlove iz Data foldera
-
-            if (!Directory.Exists("Data"))
-            {
-                System.IO.Directory.CreateDirectory("Data");
+            if (!Directory.Exists("Data\\Korisnici")){
+                System.IO.Directory.CreateDirectory("Data\\Korisnici");
             }
+            string[] filePaths = Directory.GetFiles("Data\\Korisnici");
+
+
             foreach (string filePath in filePaths)
             {
 
@@ -108,6 +104,25 @@ namespace car_rental_project
                 }
             }
             return null;
+        }
+
+        public int getLastId() {
+            Korisnik k;
+            if (!Directory.Exists("Data\\Korisnici")){
+                System.IO.Directory.CreateDirectory("Data\\Korisnici");
+            }
+            string[] filePaths = Directory.GetFiles("Data\\Korisnici");
+            if (filePaths.Length != 0) {
+                stream = File.Open(filePaths[filePaths.Length - 1], FileMode.Open);
+                k = (Korisnik)bf.Deserialize(stream);
+                stream.Close();
+                return k.id;
+            }
+            else {
+                return 0;
+            }
+            
+            
         }
 
     }

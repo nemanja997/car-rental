@@ -46,11 +46,11 @@ namespace car_rental_project
             BinaryFormatter bf = new BinaryFormatter();
             Korisnik korisnik;
             List<Kupac> listaKupaca = new List<Kupac>();
-            string[] filePaths = Directory.GetFiles("Data"); //Uzmi sve fajlove iz Data foldera
+            string[] filePaths = Directory.GetFiles("Data\\Korisnici");
 
-            if (!Directory.Exists("Data"))
+            if (!Directory.Exists("Data\\Korisnici"))
             {
-                System.IO.Directory.CreateDirectory("Data");
+                System.IO.Directory.CreateDirectory("Data\\Korisnici");
             }
             foreach (string filePath in filePaths)
             {
@@ -66,6 +66,32 @@ namespace car_rental_project
                 }
             }
             return listaKupaca;
+        }
+
+        public static bool izmeniKupca(string korisnickoIme,Kupac izmenjeniKupac) {
+            Stream stream;
+            BinaryFormatter bf = new BinaryFormatter();
+            string[] filePaths = Directory.GetFiles("Data\\Korisnici");
+            Korisnik korisnik;
+            foreach (string filePath in filePaths){
+                if (File.Exists(filePath)){
+                    stream = File.Open(filePath, FileMode.Open);
+                    korisnik = (Korisnik)bf.Deserialize(stream);
+                    stream.Close();
+                    
+                    if (korisnik is Kupac && korisnik.KorisnickoIme == korisnickoIme)
+                    {
+                        try{
+                            File.Delete(filePath);
+                        }catch (IOException){}
+                        stream = File.Open("Data\\Korisnici\\" + izmenjeniKupac.KorisnickoIme + ".bin", FileMode.Create);
+                        bf.Serialize(stream, izmenjeniKupac);
+                        stream.Close();
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
     }
 }
