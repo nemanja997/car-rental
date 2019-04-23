@@ -28,573 +28,82 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.TBoxIzmenaLozinka = new System.Windows.Forms.TextBox();
-            this.TBoxIzmenaKorisnickoIme = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.TBoxDodajLozinka = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.TBoxDodajKorisnickoIme = new System.Windows.Forms.TextBox();
-            this.BtnDodajKupca = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TBoxDodajJMBG = new System.Windows.Forms.TextBox();
-            this.TBoxDodajTelefon = new System.Windows.Forms.TextBox();
-            this.TBoxDodajPrezime = new System.Windows.Forms.TextBox();
-            this.TBoxDodajIme = new System.Windows.Forms.TextBox();
-            this.BtnIzmeniKupca = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.BtnObrisiKupca = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TBoxIzmenaJMBG = new System.Windows.Forms.TextBox();
-            this.TBoxIzmenaTelefon = new System.Windows.Forms.TextBox();
-            this.TBoxIzmenaPrezime = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TBoxIzmenaIme = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.TBoxDodajDan = new System.Windows.Forms.TextBox();
-            this.TBoxDodajMesec = new System.Windows.Forms.TextBox();
-            this.TBoxDodajGodina = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.TBoxIzmenaDan = new System.Windows.Forms.TextBox();
-            this.TBoxIzmenaMesec = new System.Windows.Forms.TextBox();
-            this.TBoxIzmenaGodina = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.BtnKupac = new System.Windows.Forms.Button();
+            this.BtnAutomobil = new System.Windows.Forms.Button();
+            this.BtnPonuda = new System.Windows.Forms.Button();
+            this.BtnRezervacija = new System.Windows.Forms.Button();
+            this.BtnStatistika = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.TBoxIzmenaGodina);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.TBoxIzmenaMesec);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.TBoxIzmenaDan);
-            this.groupBox1.Controls.Add(this.TBoxIzmenaLozinka);
-            this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.TBoxIzmenaKorisnickoIme);
-            this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.BtnIzmeniKupca);
-            this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Controls.Add(this.BtnObrisiKupca);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.TBoxIzmenaJMBG);
-            this.groupBox1.Controls.Add(this.TBoxIzmenaTelefon);
-            this.groupBox1.Controls.Add(this.TBoxIzmenaPrezime);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.TBoxIzmenaIme);
-            this.groupBox1.Location = new System.Drawing.Point(14, 14);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(938, 234);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Kupac";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(462, 18);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(50, 15);
-            this.label13.TabIndex = 19;
-            this.label13.Text = "Lozinka";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(304, 18);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(91, 15);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "Korisnicko ime:";
-            // 
-            // TBoxIzmenaLozinka
-            // 
-            this.TBoxIzmenaLozinka.Location = new System.Drawing.Point(462, 36);
-            this.TBoxIzmenaLozinka.Name = "TBoxIzmenaLozinka";
-            this.TBoxIzmenaLozinka.Size = new System.Drawing.Size(149, 21);
-            this.TBoxIzmenaLozinka.TabIndex = 17;
-            // 
-            // TBoxIzmenaKorisnickoIme
-            // 
-            this.TBoxIzmenaKorisnickoIme.Location = new System.Drawing.Point(307, 36);
-            this.TBoxIzmenaKorisnickoIme.Name = "TBoxIzmenaKorisnickoIme";
-            this.TBoxIzmenaKorisnickoIme.Size = new System.Drawing.Size(150, 21);
-            this.TBoxIzmenaKorisnickoIme.TabIndex = 16;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.TBoxDodajGodina);
-            this.groupBox2.Controls.Add(this.TBoxDodajMesec);
-            this.groupBox2.Controls.Add(this.TBoxDodajDan);
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.TBoxDodajLozinka);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.TBoxDodajKorisnickoIme);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.BtnDodajKupca);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.TBoxDodajJMBG);
-            this.groupBox2.Controls.Add(this.TBoxDodajTelefon);
-            this.groupBox2.Controls.Add(this.TBoxDodajPrezime);
-            this.groupBox2.Controls.Add(this.TBoxDodajIme);
-            this.groupBox2.Location = new System.Drawing.Point(618, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(320, 226);
-            this.groupBox2.TabIndex = 15;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Dodaj kupca";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(150, 26);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(53, 15);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "Lozinka:";
-            // 
-            // TBoxDodajLozinka
-            // 
-            this.TBoxDodajLozinka.Location = new System.Drawing.Point(153, 44);
-            this.TBoxDodajLozinka.Name = "TBoxDodajLozinka";
-            this.TBoxDodajLozinka.Size = new System.Drawing.Size(131, 21);
-            this.TBoxDodajLozinka.TabIndex = 13;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(16, 25);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(91, 15);
-            this.label14.TabIndex = 12;
-            this.label14.Text = "Korisnicko ime:";
-            // 
-            // TBoxDodajKorisnickoIme
-            // 
-            this.TBoxDodajKorisnickoIme.Location = new System.Drawing.Point(16, 44);
-            this.TBoxDodajKorisnickoIme.Name = "TBoxDodajKorisnickoIme";
-            this.TBoxDodajKorisnickoIme.Size = new System.Drawing.Size(131, 21);
-            this.TBoxDodajKorisnickoIme.TabIndex = 11;
-            // 
-            // BtnDodajKupca
-            // 
-            this.BtnDodajKupca.Location = new System.Drawing.Point(153, 189);
-            this.BtnDodajKupca.Name = "BtnDodajKupca";
-            this.BtnDodajKupca.Size = new System.Drawing.Size(131, 30);
-            this.BtnDodajKupca.TabIndex = 10;
-            this.BtnDodajKupca.Text = "Dodaj kupca";
-            this.BtnDodajKupca.UseVisualStyleBackColor = true;
-            this.BtnDodajKupca.Click += new System.EventHandler(this.btnDodajKupca_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(150, 148);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 15);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "JMBG:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(150, 107);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 15);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Telefon:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 112);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 15);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Datum rodjenja:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(150, 65);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 15);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Prezime:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 65);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 15);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Ime:";
-            // 
-            // TBoxDodajJMBG
-            // 
-            this.TBoxDodajJMBG.Location = new System.Drawing.Point(153, 166);
-            this.TBoxDodajJMBG.Name = "TBoxDodajJMBG";
-            this.TBoxDodajJMBG.Size = new System.Drawing.Size(131, 21);
-            this.TBoxDodajJMBG.TabIndex = 4;
-            // 
-            // TBoxDodajTelefon
-            // 
-            this.TBoxDodajTelefon.Location = new System.Drawing.Point(153, 125);
-            this.TBoxDodajTelefon.Name = "TBoxDodajTelefon";
-            this.TBoxDodajTelefon.Size = new System.Drawing.Size(131, 21);
-            this.TBoxDodajTelefon.TabIndex = 3;
-            // 
-            // TBoxDodajPrezime
-            // 
-            this.TBoxDodajPrezime.Location = new System.Drawing.Point(153, 83);
-            this.TBoxDodajPrezime.Name = "TBoxDodajPrezime";
-            this.TBoxDodajPrezime.Size = new System.Drawing.Size(131, 21);
-            this.TBoxDodajPrezime.TabIndex = 1;
-            // 
-            // TBoxDodajIme
-            // 
-            this.TBoxDodajIme.Location = new System.Drawing.Point(16, 83);
-            this.TBoxDodajIme.Name = "TBoxDodajIme";
-            this.TBoxDodajIme.Size = new System.Drawing.Size(131, 21);
-            this.TBoxDodajIme.TabIndex = 0;
-            // 
-            // BtnIzmeniKupca
-            // 
-            this.BtnIzmeniKupca.Location = new System.Drawing.Point(461, 189);
-            this.BtnIzmeniKupca.Name = "BtnIzmeniKupca";
-            this.BtnIzmeniKupca.Size = new System.Drawing.Size(150, 29);
-            this.BtnIzmeniKupca.TabIndex = 13;
-            this.BtnIzmeniKupca.Text = "Izmeni";
-            this.BtnIzmeniKupca.UseVisualStyleBackColor = true;
-            this.BtnIzmeniKupca.Click += new System.EventHandler(this.BtnIzmeniKupca_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(9, 42);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(275, 124);
-            this.listBox1.TabIndex = 12;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // BtnObrisiKupca
-            // 
-            this.BtnObrisiKupca.Location = new System.Drawing.Point(78, 172);
-            this.BtnObrisiKupca.Name = "BtnObrisiKupca";
-            this.BtnObrisiKupca.Size = new System.Drawing.Size(133, 27);
-            this.BtnObrisiKupca.TabIndex = 14;
-            this.BtnObrisiKupca.Text = "Obrisi";
-            this.BtnObrisiKupca.UseVisualStyleBackColor = true;
-            this.BtnObrisiKupca.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 15);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Pretraga:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(459, 103);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 15);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "JMBG:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(459, 142);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 15);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Telefon:";
-            // 
-            // TBoxIzmenaJMBG
-            // 
-            this.TBoxIzmenaJMBG.Location = new System.Drawing.Point(462, 121);
-            this.TBoxIzmenaJMBG.Name = "TBoxIzmenaJMBG";
-            this.TBoxIzmenaJMBG.Size = new System.Drawing.Size(149, 21);
-            this.TBoxIzmenaJMBG.TabIndex = 7;
-            // 
-            // TBoxIzmenaTelefon
-            // 
-            this.TBoxIzmenaTelefon.Location = new System.Drawing.Point(463, 160);
-            this.TBoxIzmenaTelefon.Name = "TBoxIzmenaTelefon";
-            this.TBoxIzmenaTelefon.Size = new System.Drawing.Size(149, 21);
-            this.TBoxIzmenaTelefon.TabIndex = 6;
-            // 
-            // TBoxIzmenaPrezime
-            // 
-            this.TBoxIzmenaPrezime.Location = new System.Drawing.Point(463, 79);
-            this.TBoxIzmenaPrezime.Name = "TBoxIzmenaPrezime";
-            this.TBoxIzmenaPrezime.Size = new System.Drawing.Size(149, 21);
-            this.TBoxIzmenaPrezime.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(305, 112);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Datum rodjenja:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(459, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Prezime:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(304, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Ime:";
-            // 
-            // TBoxIzmenaIme
-            // 
-            this.TBoxIzmenaIme.Location = new System.Drawing.Point(308, 83);
-            this.TBoxIzmenaIme.Name = "TBoxIzmenaIme";
-            this.TBoxIzmenaIme.Size = new System.Drawing.Size(149, 21);
-            this.TBoxIzmenaIme.TabIndex = 0;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Location = new System.Drawing.Point(14, 276);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(938, 37);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Automobili";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Location = new System.Drawing.Point(14, 320);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(938, 100);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "ponuda";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Location = new System.Drawing.Point(13, 427);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(939, 100);
-            this.groupBox5.TabIndex = 4;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Rezervacije";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(30, 138);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(33, 15);
-            this.label16.TabIndex = 15;
-            this.label16.Text = "Dan:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(16, 166);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(47, 15);
-            this.label17.TabIndex = 16;
-            this.label17.Text = "Mesec:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(13, 193);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(50, 15);
-            this.label18.TabIndex = 17;
-            this.label18.Text = "Godina:";
-            // 
-            // TBoxDodajDan
-            // 
-            this.TBoxDodajDan.Location = new System.Drawing.Point(69, 135);
-            this.TBoxDodajDan.Name = "TBoxDodajDan";
-            this.TBoxDodajDan.Size = new System.Drawing.Size(52, 21);
-            this.TBoxDodajDan.TabIndex = 18;
-            // 
-            // TBoxDodajMesec
-            // 
-            this.TBoxDodajMesec.Location = new System.Drawing.Point(69, 163);
-            this.TBoxDodajMesec.Name = "TBoxDodajMesec";
-            this.TBoxDodajMesec.Size = new System.Drawing.Size(52, 21);
-            this.TBoxDodajMesec.TabIndex = 19;
-            // 
-            // TBoxDodajGodina
-            // 
-            this.TBoxDodajGodina.Location = new System.Drawing.Point(69, 190);
-            this.TBoxDodajGodina.Name = "TBoxDodajGodina";
-            this.TBoxDodajGodina.Size = new System.Drawing.Size(52, 21);
-            this.TBoxDodajGodina.TabIndex = 20;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(329, 135);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(33, 15);
-            this.label19.TabIndex = 15;
-            this.label19.Text = "Dan:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(315, 163);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(47, 15);
-            this.label20.TabIndex = 16;
-            this.label20.Text = "Mesec:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(312, 190);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(50, 15);
-            this.label21.TabIndex = 17;
-            this.label21.Text = "Godina:";
-            // 
-            // TBoxIzmenaDan
-            // 
-            this.TBoxIzmenaDan.Location = new System.Drawing.Point(368, 132);
-            this.TBoxIzmenaDan.Name = "TBoxIzmenaDan";
-            this.TBoxIzmenaDan.Size = new System.Drawing.Size(52, 21);
-            this.TBoxIzmenaDan.TabIndex = 18;
-            // 
-            // TBoxIzmenaMesec
-            // 
-            this.TBoxIzmenaMesec.Location = new System.Drawing.Point(368, 160);
-            this.TBoxIzmenaMesec.Name = "TBoxIzmenaMesec";
-            this.TBoxIzmenaMesec.Size = new System.Drawing.Size(52, 21);
-            this.TBoxIzmenaMesec.TabIndex = 19;
-            // 
-            // TBoxIzmenaGodina
-            // 
-            this.TBoxIzmenaGodina.Location = new System.Drawing.Point(368, 187);
-            this.TBoxIzmenaGodina.Name = "TBoxIzmenaGodina";
-            this.TBoxIzmenaGodina.Size = new System.Drawing.Size(52, 21);
-            this.TBoxIzmenaGodina.TabIndex = 20;
+            // BtnKupac
+            // 
+            this.BtnKupac.Location = new System.Drawing.Point(26, 29);
+            this.BtnKupac.Name = "BtnKupac";
+            this.BtnKupac.Size = new System.Drawing.Size(255, 69);
+            this.BtnKupac.TabIndex = 0;
+            this.BtnKupac.Text = "Kupac";
+            this.BtnKupac.UseVisualStyleBackColor = true;
+            this.BtnKupac.Click += new System.EventHandler(this.BtnKupac_Click);
+            // 
+            // BtnAutomobil
+            // 
+            this.BtnAutomobil.Location = new System.Drawing.Point(297, 29);
+            this.BtnAutomobil.Name = "BtnAutomobil";
+            this.BtnAutomobil.Size = new System.Drawing.Size(255, 69);
+            this.BtnAutomobil.TabIndex = 0;
+            this.BtnAutomobil.Text = "Automobil";
+            this.BtnAutomobil.UseVisualStyleBackColor = true;
+            this.BtnAutomobil.Click += new System.EventHandler(this.BtnAutomobil_Click);
+            // 
+            // BtnPonuda
+            // 
+            this.BtnPonuda.Location = new System.Drawing.Point(297, 113);
+            this.BtnPonuda.Name = "BtnPonuda";
+            this.BtnPonuda.Size = new System.Drawing.Size(255, 69);
+            this.BtnPonuda.TabIndex = 0;
+            this.BtnPonuda.Text = "Ponuda";
+            this.BtnPonuda.UseVisualStyleBackColor = true;
+            // 
+            // BtnRezervacija
+            // 
+            this.BtnRezervacija.Location = new System.Drawing.Point(26, 113);
+            this.BtnRezervacija.Name = "BtnRezervacija";
+            this.BtnRezervacija.Size = new System.Drawing.Size(255, 69);
+            this.BtnRezervacija.TabIndex = 0;
+            this.BtnRezervacija.Text = "Rezervacije";
+            this.BtnRezervacija.UseVisualStyleBackColor = true;
+            // 
+            // BtnStatistika
+            // 
+            this.BtnStatistika.Location = new System.Drawing.Point(162, 199);
+            this.BtnStatistika.Name = "BtnStatistika";
+            this.BtnStatistika.Size = new System.Drawing.Size(255, 69);
+            this.BtnStatistika.TabIndex = 0;
+            this.BtnStatistika.Text = "Statistika";
+            this.BtnStatistika.UseVisualStyleBackColor = true;
             // 
             // AdminForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1145, 582);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnStatistika);
+            this.Controls.Add(this.BtnRezervacija);
+            this.Controls.Add(this.BtnPonuda);
+            this.Controls.Add(this.BtnAutomobil);
+            this.Controls.Add(this.BtnKupac);
             this.Name = "AdminForm";
             this.Text = "AdminForm";
-            this.Load += new System.EventHandler(this.AdminForm_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TBoxIzmenaJMBG;
-        private System.Windows.Forms.TextBox TBoxIzmenaTelefon;
-        private System.Windows.Forms.TextBox TBoxIzmenaPrezime;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TBoxIzmenaIme;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button BtnIzmeniKupca;
-        private System.Windows.Forms.Button BtnObrisiKupca;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox TBoxDodajJMBG;
-        private System.Windows.Forms.TextBox TBoxDodajTelefon;
-        private System.Windows.Forms.TextBox TBoxDodajPrezime;
-        private System.Windows.Forms.TextBox TBoxDodajIme;
-        private System.Windows.Forms.Button BtnDodajKupca;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox TBoxIzmenaLozinka;
-        private System.Windows.Forms.TextBox TBoxIzmenaKorisnickoIme;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox TBoxDodajLozinka;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox TBoxDodajKorisnickoIme;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox TBoxDodajGodina;
-        private System.Windows.Forms.TextBox TBoxDodajMesec;
-        private System.Windows.Forms.TextBox TBoxDodajDan;
-        private System.Windows.Forms.TextBox TBoxIzmenaGodina;
-        private System.Windows.Forms.TextBox TBoxIzmenaMesec;
-        private System.Windows.Forms.TextBox TBoxIzmenaDan;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button BtnKupac;
+        private System.Windows.Forms.Button BtnAutomobil;
+        private System.Windows.Forms.Button BtnPonuda;
+        private System.Windows.Forms.Button BtnRezervacija;
+        private System.Windows.Forms.Button BtnStatistika;
     }
 }

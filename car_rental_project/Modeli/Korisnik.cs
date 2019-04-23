@@ -25,7 +25,7 @@ namespace car_rental_project
         {
             this.korisnickoIme = korisnickoIme;
             this.lozinka = lozinka;
-            this.id = getLastId() + 1;
+            this.id = vratiNajveciId() + 1;
         }
 
         public string KorisnickoIme { get => korisnickoIme; set => korisnickoIme = value; }
@@ -44,7 +44,7 @@ namespace car_rental_project
                 stream = File.Open(path, FileMode.Create);
                 bf.Serialize(stream, korisnik);
                 stream.Close();
-                MessageBox.Show("Uspesno ste dodali novog kupca!");
+                MessageBox.Show("Uspesno ste dodali novog korisnika!");
                 return true;
             }
             else
@@ -52,8 +52,6 @@ namespace car_rental_project
                 MessageBox.Show("Korisnik sa unetim korisnickim imenom vec postoji. Molimo odaberite drugo korisnicko ime.");
                 return false;
             }
-
-
         }
 
         static public void obrisiKorisnika(string korisnickoIme)
@@ -72,11 +70,6 @@ namespace car_rental_project
             }else {
                 MessageBox.Show("Ne postoji fajl koji ste pokusali da obrisete.");
             }
-        }
-
-        static public void izmeniKorisnika(Korisnik korisnik)
-        {
-
         }
 
         static public Korisnik pronadjiKorisnika(string korisnickoIme, string lozinka)
@@ -98,7 +91,6 @@ namespace car_rental_project
                     stream.Close();
                     if (korisnik.KorisnickoIme.Equals(korisnickoIme) && korisnik.Lozinka.Equals(lozinka))
                     {
-                        MessageBox.Show("Uspesno logovanje");
                         return korisnik;
                     }
                 }
@@ -106,23 +98,24 @@ namespace car_rental_project
             return null;
         }
 
-        public int getLastId() {
+        private int vratiNajveciId() {
+            int max = 0;
             Korisnik k;
             if (!Directory.Exists("Data\\Korisnici")){
                 System.IO.Directory.CreateDirectory("Data\\Korisnici");
             }
             string[] filePaths = Directory.GetFiles("Data\\Korisnici");
             if (filePaths.Length != 0) {
-                stream = File.Open(filePaths[filePaths.Length - 1], FileMode.Open);
-                k = (Korisnik)bf.Deserialize(stream);
-                stream.Close();
-                return k.id;
+                foreach (string filePath in filePaths) {
+                    stream = File.Open(filePath, FileMode.Open);
+                    k = (Korisnik)bf.Deserialize(stream);
+                    stream.Close();
+                    if (max < k.Id) {
+                        max = k.Id;
+                    }
+                }
             }
-            else {
-                return 0;
-            }
-            
-            
+            return max;
         }
 
     }

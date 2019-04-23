@@ -9,3 +9,5 @@ C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog program
 C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.exe
 C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.pdb
 C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.AdminForm.resources
+C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.AdKupacForm.resources
+C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.AdAutomobilForm.resources

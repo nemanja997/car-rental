@@ -49,6 +49,7 @@
             this.TBoxLozinka.Name = "TBoxLozinka";
             this.TBoxLozinka.Size = new System.Drawing.Size(201, 20);
             this.TBoxLozinka.TabIndex = 1;
+            this.TBoxLozinka.UseSystemPasswordChar = true;
             // 
             // label1
             // 

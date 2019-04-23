@@ -16,10 +16,10 @@ namespace car_rental_project
         private string ime;
         private string prezime;
         private string jmbg;
-        private string datumRodjenja;
+        private DateTime datumRodjenja;
         private string telefon;
 
-        public Kupac(string korisnickoIme, string lozinka, string ime, string prezime, string jmbg, string datumRodjenja, string telefon) : base(korisnickoIme, lozinka)
+        public Kupac(string korisnickoIme, string lozinka, string ime, string prezime, string jmbg, DateTime datumRodjenja, string telefon) : base(korisnickoIme, lozinka)
         {
             this.ime = ime;
             this.prezime = prezime;
@@ -32,12 +32,12 @@ namespace car_rental_project
         public string Ime { get => ime; set => ime = value; }
         public string Prezime { get => prezime; set => prezime = value; }
         public string Jmbg { get => jmbg; set => jmbg = value; }
-        public string DatumRodjenja { get => datumRodjenja; set => datumRodjenja = value; }
+        public DateTime DatumRodjenja { get => datumRodjenja; set => datumRodjenja = value; }
         public string Telefon { get => telefon; set => telefon = value; }
 
         public override string ToString()
         {
-            return "Korisnicko ime: " + KorisnickoIme +", Ime i prezime:" + Ime + " " + Prezime;
+            return Ime + " " + Prezime + " (" + KorisnickoIme + ") " + "JMBG: " + Jmbg + "Telefon: " + Telefon;
         }
 
         public static List<Kupac> vratiSveKupce()
