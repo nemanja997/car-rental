@@ -85,7 +85,6 @@ namespace car_rental_project
             {
                 Ponuda ponudaZaBrisanje = (Ponuda)LBPonude.SelectedItem;
                 Ponuda.obrisiPonudu(ponudaZaBrisanje.Id);
-
                 osveziListuPonuda();
             }
             else
@@ -97,14 +96,64 @@ namespace car_rental_project
         private void LBPonude_SelectedIndexChanged(object sender, EventArgs e)
         {
             Ponuda ponuda = (Ponuda)LBPonude.SelectedItem;
-            Automobil automobil =null;
-            foreach (Automobil a in listaSvihAutomobila) {
-                if (a.Id == ponuda.IdAutomobila) {
-                    automobil = a;
+            if (ponuda != null) {
+                foreach (Automobil a in listaSvihAutomobila)
+                {
+                    if (a.Id == ponuda.IdAutomobila)
+                    {
+                        CBIzmenaAutomobil.SelectedItem = a;
+                    }
                 }
+                TBoxIzmenaCenaPoDanu.Text = ponuda.CenaPoDanu.ToString();
             }
-            CBIzmenaAutomobil.SelectedItem = automobil;
-            TBoxIzmenaCenaPoDanu.Text = ponuda.CenaPoDanu.ToString();
+        }
+
+        private void BtnIzmenaPonuda_Click(object sender, EventArgs e)
+        {
+            int cena;
+            bool uspesno = int.TryParse(TBoxIzmenaCenaPoDanu.Text.Trim(), out cena);
+            Ponuda izabranaPonuda = (Ponuda)LBPonude.SelectedItem;
+            if (izabranaPonuda != null)
+            {
+                int odnosDatuma = DateTime.Compare(DTPDodajDatumOd.Value, DTPDodajDatumDo.Value);
+                if (odnosDatuma <= 0)
+                {
+                    if (uspesno)
+                    {
+                        Ponuda novaPonuda = new Ponuda(
+                                        ((Automobil)CBIzmenaAutomobil.SelectedItem).Id,
+                                        DTPIzmenaDatumOd.Value,
+                                        DTPIzmenaDatumDo.Value,
+                                        cena);
+                        if (Ponuda.izmeniPonudu(izabranaPonuda.Id, novaPonuda))
+                        {
+                            osveziListuPonuda();
+                            MessageBox.Show("Uspesno ste izmenili ponudu.");
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nije uspela izmena ponude.");
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cena moze sadrzati samo cifre.");
+                    }
+                }
+                else {
+                    MessageBox.Show("Krajnji datum ne sme biti pre pocetnog."); 
+
+                }
+                
+            }
+            else {
+                MessageBox.Show("Morate izabrati ponudu za izmenu.");
+            }
+            
+
+            
         }
     }
 }

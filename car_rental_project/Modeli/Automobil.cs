@@ -39,7 +39,7 @@ namespace car_rental_project.Modeli
             this.id = vratiNajveciId() + 1;
         }
 
-        public int Id { get => id;}
+        public int Id { get => id; set => id = value; }
         public string Marka { get => marka; set => marka = value; }
         public string Model { get => model; set => model = value; }
         public int Godiste { get => godiste; set => godiste = value; }
@@ -86,11 +86,13 @@ namespace car_rental_project.Modeli
                 {
                     File.Delete(path);
                     MessageBox.Show("Automobil uspesno obrisan.");
+                    Ponuda.obrisiSvePonudeZaAutomobil(id);
                 }
                 catch (IOException)
                 {
                     MessageBox.Show("Nije uspelo brisanje fajla trazenog automobila.");
                 }
+
             }
             else
             {
@@ -126,6 +128,7 @@ namespace car_rental_project.Modeli
 
         public static bool izmeniAutomobil(int id, Automobil izmenjeniAutomobil)
         {
+            izmenjeniAutomobil.Id = id;
             Stream stream;
             BinaryFormatter bf = new BinaryFormatter();
             string[] filePaths = Directory.GetFiles("Data\\Automobili");
@@ -147,7 +150,6 @@ namespace car_rental_project.Modeli
                         catch (IOException) { }
                         stream = File.Open("Data\\Automobili\\" + izmenjeniAutomobil.Id + ".bin", FileMode.Create);
                         bf.Serialize(stream, izmenjeniAutomobil);
-                        
                         stream.Close();
                         return true;
                     }

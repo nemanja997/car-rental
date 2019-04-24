@@ -253,6 +253,7 @@
             this.BtnIzmenaPonuda.TabIndex = 12;
             this.BtnIzmenaPonuda.Text = "Izmeni ponudu";
             this.BtnIzmenaPonuda.UseVisualStyleBackColor = true;
+            this.BtnIzmenaPonuda.Click += new System.EventHandler(this.BtnIzmenaPonuda_Click);
             // 
             // groupBox1
             // 

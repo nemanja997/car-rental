@@ -30,7 +30,7 @@ namespace car_rental_project.Modeli
             this.CenaPoDanu = cenaPoDanu;
             this.id = vratiNajveciId() + 1;
         }
-        public int Id { get => id;}
+        public int Id { get => id; set => id = value; }
         public int IdAutomobila { get => idAutomobila; set => idAutomobila = value; }
         public DateTime DatumOd { get => datumOd; set => datumOd = value; }
         public DateTime DatumDo { get => datumDo; set => datumDo = value; }
@@ -64,19 +64,13 @@ namespace car_rental_project.Modeli
             }
         }
 
-        public static List<Ponuda> vratiSveAutomobile()
+        public static bool izmeniPonudu(int idPonude,Ponuda novaPonuda)
         {
+            novaPonuda.Id = idPonude;
             Stream stream;
             BinaryFormatter bf = new BinaryFormatter();
-            Ponuda ponuda;
-            List<Ponuda> listaPonuda = new List<Ponuda>();
-
-
-            if (!Directory.Exists("Data\\Ponude"))
-            {
-                System.IO.Directory.CreateDirectory("Data\\Ponude");
-            }
             string[] filePaths = Directory.GetFiles("Data\\Ponude");
+            Ponuda ponuda;
             foreach (string filePath in filePaths)
             {
                 if (File.Exists(filePath))
@@ -84,10 +78,22 @@ namespace car_rental_project.Modeli
                     stream = File.Open(filePath, FileMode.Open);
                     ponuda = (Ponuda)bf.Deserialize(stream);
                     stream.Close();
-                    listaPonuda.Add(ponuda);
+
+                    if (ponuda.Id == idPonude)
+                    {
+                        try
+                        {
+                            File.Delete(filePath);
+                        }
+                        catch (IOException) { }
+                        stream = File.Open("Data\\Ponude\\" + novaPonuda.Id + ".bin", FileMode.Create);
+                        bf.Serialize(stream, novaPonuda);
+                        stream.Close();
+                        return true;
+                    }
                 }
             }
-            return listaPonuda;
+            return false;
         }
 
 
@@ -138,7 +144,15 @@ namespace car_rental_project.Modeli
         }
 
         public static void obrisiSvePonudeZaAutomobil(int idAutomobila) {
-            
+            FileStream stream;
+            BinaryFormatter bf = new BinaryFormatter();
+            List<Ponuda> listaSvihPonuda = Ponuda.vratiSvePonude();
+            foreach (Ponuda ponuda in listaSvihPonuda) {
+                if (ponuda.IdAutomobila == idAutomobila) {
+                    Ponuda.obrisiPonudu(ponuda.Id);
+                }
+            }
+
         }
 
         private int vratiNajveciId()
