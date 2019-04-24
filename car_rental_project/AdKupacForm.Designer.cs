@@ -67,6 +67,7 @@
             // 
             // DTPIzmenaDatumRodjenja
             // 
+            this.DTPIzmenaDatumRodjenja.CustomFormat = "dd.MM.yyyy.";
             this.DTPIzmenaDatumRodjenja.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTPIzmenaDatumRodjenja.Location = new System.Drawing.Point(440, 125);
             this.DTPIzmenaDatumRodjenja.MaxDate = new System.DateTime(2004, 12, 31, 0, 0, 0, 0);
@@ -251,6 +252,7 @@
             // 
             // DTPDodajDatumRodjenja
             // 
+            this.DTPDodajDatumRodjenja.CustomFormat = "dd.MM.yyyy.";
             this.DTPDodajDatumRodjenja.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTPDodajDatumRodjenja.Location = new System.Drawing.Point(16, 125);
             this.DTPDodajDatumRodjenja.MaxDate = new System.DateTime(2004, 12, 31, 0, 0, 0, 0);

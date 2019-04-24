@@ -47,7 +47,7 @@
             // 
             // BtnAutomobil
             // 
-            this.BtnAutomobil.Location = new System.Drawing.Point(297, 29);
+            this.BtnAutomobil.Location = new System.Drawing.Point(26, 104);
             this.BtnAutomobil.Name = "BtnAutomobil";
             this.BtnAutomobil.Size = new System.Drawing.Size(255, 69);
             this.BtnAutomobil.TabIndex = 0;
@@ -57,16 +57,17 @@
             // 
             // BtnPonuda
             // 
-            this.BtnPonuda.Location = new System.Drawing.Point(297, 113);
+            this.BtnPonuda.Location = new System.Drawing.Point(26, 179);
             this.BtnPonuda.Name = "BtnPonuda";
             this.BtnPonuda.Size = new System.Drawing.Size(255, 69);
             this.BtnPonuda.TabIndex = 0;
             this.BtnPonuda.Text = "Ponuda";
             this.BtnPonuda.UseVisualStyleBackColor = true;
+            this.BtnPonuda.Click += new System.EventHandler(this.BtnPonuda_Click);
             // 
             // BtnRezervacija
             // 
-            this.BtnRezervacija.Location = new System.Drawing.Point(26, 113);
+            this.BtnRezervacija.Location = new System.Drawing.Point(26, 254);
             this.BtnRezervacija.Name = "BtnRezervacija";
             this.BtnRezervacija.Size = new System.Drawing.Size(255, 69);
             this.BtnRezervacija.TabIndex = 0;
@@ -75,7 +76,7 @@
             // 
             // BtnStatistika
             // 
-            this.BtnStatistika.Location = new System.Drawing.Point(162, 199);
+            this.BtnStatistika.Location = new System.Drawing.Point(26, 329);
             this.BtnStatistika.Name = "BtnStatistika";
             this.BtnStatistika.Size = new System.Drawing.Size(255, 69);
             this.BtnStatistika.TabIndex = 0;
@@ -86,7 +87,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(313, 429);
             this.Controls.Add(this.BtnStatistika);
             this.Controls.Add(this.BtnRezervacija);
             this.Controls.Add(this.BtnPonuda);

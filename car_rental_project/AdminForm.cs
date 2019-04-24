@@ -28,5 +28,11 @@ namespace car_rental_project
             Form adAutomobilForm = new AdAutomobilForm();
             adAutomobilForm.ShowDialog();
         }
+
+        private void BtnPonuda_Click(object sender, EventArgs e)
+        {
+            Form adPonudaForm = new AdPonudaForm();
+            adPonudaForm.ShowDialog();
+        }
     }
 }

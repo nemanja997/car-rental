@@ -47,7 +47,7 @@ namespace car_rental_project
                 int jbmg,brTelefona;
                 bool jesuBrojevi = int.TryParse(TBoxDodajTelefon.Text.Trim(), out brTelefona) && 
                     int.TryParse(TBoxDodajJMBG.Text.Trim(), out jbmg);
-                if (jesuBrojevi && TBoxDodajJMBG.Text.Trim().Length == 13 && brTelefona > 8)
+                if (jesuBrojevi && TBoxDodajJMBG.Text.Trim().Length == 13 && TBoxDodajTelefon.Text.Trim().Length > 8)
                 {
                     Kupac noviKupac =
                          new Kupac(
@@ -103,10 +103,6 @@ namespace car_rental_project
             osveziListuKupaca();
             Rezervacija r = new Rezervacija(1,2,new DateTime(2019,12,12), new DateTime(2019, 12, 12),1534.3);
             Rezervacija.napraviRezervaciju(r);
-            DTPIzmenaDatumRodjenja.Format = DateTimePickerFormat.Custom;
-            DTPDodajDatumRodjenja.Format = DateTimePickerFormat.Custom;
-            DTPIzmenaDatumRodjenja.CustomFormat = "dd.MM.yyyy";
-            DTPDodajDatumRodjenja.CustomFormat = "dd.MM.yyyy";
         }
 
 
@@ -117,7 +113,7 @@ namespace car_rental_project
                 int jbmg, brTelefona;
                 bool jesuBrojevi = int.TryParse(TBoxDodajTelefon.Text.Trim(), out brTelefona) &&
                     int.TryParse(TBoxDodajJMBG.Text.Trim(), out jbmg);
-                if (jesuBrojevi && TBoxDodajJMBG.Text.Trim().Length == 13 && brTelefona > 8)
+                if (jesuBrojevi && TBoxDodajJMBG.Text.Trim().Length == 13 && (TBoxDodajTelefon.Text.Trim().Length >8))
                 {
                     Kupac kupac = (Kupac)LBKupci.SelectedItem;
 
@@ -146,27 +142,12 @@ namespace car_rental_project
         }
         public void osveziListuKupaca() {
             LBKupci.Items.Clear();
-            //CBKupacZaRezervacije.Items.Clear();
            listaSvihKupaca = Kupac.vratiSveKupce();
             foreach (Kupac kupac in listaSvihKupaca){
                 LBKupci.Items.Add(kupac);
-                //CBKupacZaRezervacije.Items.Add(kupac);
             }
         }
         
-
-        //private void CBKupacZaRezervacije_SelectedIndexChanged(object sender, EventArgs e)
-        //{   
-        //    List<Rezervacija> rezervacije = Rezervacija.vratiRezervacijeZaKupca((Kupac)CBKupacZaRezervacije.SelectedItem);
-        //    if (rezervacije != null) {
-        //        foreach (Rezervacija rezervacija in rezervacije)
-        //        {
-        //            LBRezervacije.Items.Add(rezervacija);
-        //        }
-        //    }
-            
-        //}
-
         private void label12_Click(object sender, EventArgs e)
         {
 

@@ -9,22 +9,23 @@ using System.Windows.Forms;
 
 namespace car_rental_project.Modeli
 {
+    [Serializable]
     class Automobil
-    {
+    {   
+        
         private static FileStream stream;
-        private static BinaryFormatter bf;
         private int id;
         private string marka;
         private string model;
         private int godiste;
-        private int kubikaza;
+        private string kubikaza;
         private string pogon;
         private string vrstaMenjaca;
         private string karoserija;
         private string gorivo;
-        private int brojVrata;
+        private string brojVrata;
 
-        public Automobil(string marka, string model, int godiste, int kubikaza, string pogon, string vrstaMenjaca, string karoserija, string gorivo, int brojVrata)
+        public Automobil(string marka, string model, int godiste, string kubikaza, string pogon, string vrstaMenjaca, string karoserija, string gorivo, string brojVrata)
         {
             this.Marka = marka;
             this.Model = model;
@@ -42,16 +43,21 @@ namespace car_rental_project.Modeli
         public string Marka { get => marka; set => marka = value; }
         public string Model { get => model; set => model = value; }
         public int Godiste { get => godiste; set => godiste = value; }
-        public int Kubikaza { get => kubikaza; set => kubikaza = value; }
+        public string Kubikaza { get => kubikaza; set => kubikaza = value; }
         public string Pogon { get => pogon; set => pogon = value; }
         public string VrstaMenjaca { get => vrstaMenjaca; set => vrstaMenjaca = value; }
         public string Karoserija { get => karoserija; set => karoserija = value; }
         public string Gorivo { get => gorivo; set => gorivo = value; }
-        public int BrojVrata { get => brojVrata; set => brojVrata = value; }
+        public string BrojVrata { get => brojVrata; set => brojVrata = value; }
 
+        public override string ToString()
+        {
+            return Id + " " + Marka + " " + Model + " " + Godiste + " god. " + Kubikaza + " " + Gorivo +" " + VrstaMenjaca + " " + Karoserija + " " + Pogon + " pogon" + BrojVrata + " vrata";
+        }
 
         public static bool dodajAutomobil(Automobil automobil)
-        {
+        {   
+            BinaryFormatter bf = new BinaryFormatter();
             string path = "Data\\Automobili\\" + automobil.Id + ".bin";
             if (!Directory.Exists("Data\\Automobili"))
             {
@@ -98,12 +104,13 @@ namespace car_rental_project.Modeli
             BinaryFormatter bf = new BinaryFormatter();
             Automobil automobil;
             List<Automobil> listaAutomobila = new List<Automobil>();
-            string[] filePaths = Directory.GetFiles("Data\\Automobili");
+            
 
             if (!Directory.Exists("Data\\Automobili"))
-            {
+            {   
                 System.IO.Directory.CreateDirectory("Data\\Automobili");
             }
+            string[] filePaths = Directory.GetFiles("Data\\Automobili");
             foreach (string filePath in filePaths)
             {
                 if (File.Exists(filePath))
@@ -140,6 +147,7 @@ namespace car_rental_project.Modeli
                         catch (IOException) { }
                         stream = File.Open("Data\\Automobili\\" + izmenjeniAutomobil.Id + ".bin", FileMode.Create);
                         bf.Serialize(stream, izmenjeniAutomobil);
+                        
                         stream.Close();
                         return true;
                     }
@@ -150,6 +158,7 @@ namespace car_rental_project.Modeli
 
         private int vratiNajveciId()
         {
+            BinaryFormatter bf = new BinaryFormatter();
             int max = 0;
             Automobil automobil;
             if (!Directory.Exists("Data\\Automobili"))

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace car_rental_project.Modeli
 {
 
-    class ModelAutomobila
+    class MarkaAutomobila
     {
 
         private string brand;
@@ -20,16 +20,16 @@ namespace car_rental_project.Modeli
         public string Brand { get => brand; set => brand = value; }
         public List<string> Models { get => models; set => models = value; }
 
-        public static List<string> vratiSveMarke()
+        public static List<MarkaAutomobila> vratiSveMarke()
         {
+            List<MarkaAutomobila> sviModeli= new List<MarkaAutomobila>();
             List<string> listaSvihModela = new List<string>();
             string text = File.ReadAllText("Data\\ModeliAutomobila\\modeliAutomobila.json");
-            MessageBox.Show(text);
             if (File.Exists("Data\\ModeliAutomobila\\modeliAutomobila.json"))
             {   
                 JavaScriptSerializer js = new JavaScriptSerializer();
-                List<ModelAutomobila> sviModeli = js.Deserialize<List<ModelAutomobila>>(text);
-                foreach (ModelAutomobila model in sviModeli)
+                sviModeli = js.Deserialize<List<MarkaAutomobila>>(text);
+                foreach (MarkaAutomobila model in sviModeli)
                 {
                     listaSvihModela.Add(model.Brand);
                 }
@@ -39,7 +39,7 @@ namespace car_rental_project.Modeli
             }
             
 
-            return listaSvihModela;
+            return sviModeli;
         }
 
         public static List<string> vratiModeleZaMarku(string marka)
