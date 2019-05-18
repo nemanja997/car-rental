@@ -42,12 +42,13 @@ namespace car_rental_project
         private void btnDodajKupca_Click(object sender, EventArgs e)
         {
             if (TBoxDodajIme.Text.Trim().Length != 0 && TBoxDodajPrezime.Text.Trim().Length != 0 &&
-                TBoxDodajTelefon.Text.Trim().Length != 0 && 
-                TBoxDodajJMBG.Text.Trim().Length != 0){
-                int jbmg,brTelefona;
-                bool jesuBrojevi = int.TryParse(TBoxDodajTelefon.Text.Trim(), out brTelefona) && 
-                    int.TryParse(TBoxDodajJMBG.Text.Trim(), out jbmg);
-                if (jesuBrojevi && TBoxDodajJMBG.Text.Trim().Length == 13 && TBoxDodajTelefon.Text.Trim().Length > 8)
+                TBoxDodajTelefon.Text.Trim().Length != 0 &&  TBoxDodajJMBG.Text.Trim().Length != 0)
+            {
+                int brTelefona;
+                long jmbg;
+                bool uspesno = int.TryParse(TBoxDodajTelefon.Text.Trim(), out brTelefona);
+                bool uspesno2 = long.TryParse(TBoxDodajJMBG.Text.Trim(), out jmbg);
+                if (uspesno && uspesno2 && TBoxDodajJMBG.Text.Trim().Length == 13 && TBoxDodajTelefon.Text.Trim().Length > 8)
                 {
                     Kupac noviKupac =
                          new Kupac(
@@ -110,10 +111,11 @@ namespace car_rental_project
         {
             if (LBKupci.SelectedIndex > -1)
             {
-                int jbmg, brTelefona;
-                bool jesuBrojevi = int.TryParse(TBoxDodajTelefon.Text.Trim(), out brTelefona) &&
-                    int.TryParse(TBoxDodajJMBG.Text.Trim(), out jbmg);
-                if (jesuBrojevi && TBoxDodajJMBG.Text.Trim().Length == 13 && (TBoxDodajTelefon.Text.Trim().Length >8))
+                int brTelefona;
+                long jmbg;
+                bool uspesno = int.TryParse(TBoxIzmenaTelefon.Text.Trim(), out brTelefona);
+                bool uspesno2 = long.TryParse(TBoxIzmenaJMBG.Text.Trim(), out jmbg);
+                if (uspesno && uspesno2 && TBoxIzmenaJMBG.Text.Trim().Length == 13 && TBoxIzmenaTelefon.Text.Trim().Length > 8)
                 {
                     Kupac kupac = (Kupac)LBKupci.SelectedItem;
 

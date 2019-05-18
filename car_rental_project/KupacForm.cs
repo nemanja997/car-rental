@@ -12,9 +12,14 @@ namespace car_rental_project
 {
     public partial class KupacForm : Form
     {
+        Kupac kupac;
         public KupacForm()
         {
             InitializeComponent();
+            
         }
+        
+
+
     }
 }

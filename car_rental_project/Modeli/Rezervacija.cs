@@ -5,13 +5,14 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace car_rental_project.Modeli
 {
     [Serializable]
     class Rezervacija
     {
-        
+        private int id;
         private int idAutomobila;
         private int idKupca;
         private DateTime datumOd;
@@ -25,6 +26,7 @@ namespace car_rental_project.Modeli
             this.DatumOd = datumOd;
             this.DatumDo = datumDo;
             this.Cena = cena;
+            this.id = vratiNajveciId() + 1;
         }
 
         public int IdAutomobila { get => idAutomobila; set => idAutomobila = value; }
@@ -32,18 +34,18 @@ namespace car_rental_project.Modeli
         public DateTime DatumOd { get => datumOd; set => datumOd = value; }
         public DateTime DatumDo { get => datumDo; set => datumDo = value; }
         public double Cena { get => cena; set => cena = value; }
+        public int Id { get => id; set => id = value; }
 
         public override string ToString()
         {
-            return DatumOd.ToString("dd.MM.yyyy.") + " - " + DatumDo.ToString("dd.MM.yyyy.") + "Cena: " + Cena.ToString() + "dinara po danu";
+            return Id + "  " + IdKupca +  " " + DatumOd.ToString("dd.MM.yyyy.") + " - " + DatumDo.ToString("dd.MM.yyyy.") + "Cena: " + Cena.ToString() + " dinara po danu";
         }
         static public bool napraviRezervaciju(Rezervacija rezervacija)
         {
             Stream stream;
             BinaryFormatter bf = new BinaryFormatter();
 
-            string path = "Data\\Rezervacije\\" + rezervacija.idAutomobila + "-" +  rezervacija.idKupca + "-" + 
-                rezervacija.datumDo.ToString("dd-MM-yyyy") + "-" +  rezervacija.datumDo.ToString("dd-MM-yyyy") +".bin";
+            string path = "Data\\Rezervacije\\" + rezervacija.Id +".bin";
             if (!Directory.Exists("Data\\Rezervacije")) {
                 System.IO.Directory.CreateDirectory("Data\\Rezervacije");
             }
@@ -57,9 +59,30 @@ namespace car_rental_project.Modeli
             }
         }
 
-        public static List<Rezervacija> vratiRezervacijeZaKupca(Kupac kupac) {
-            List<Rezervacija> rezervacijeZaKupca = new List<Rezervacija>();
+        static public void obrisiRezervaciju(int idRezervacije)
+        {
+            string path = "Data\\Rezervacije\\" + idRezervacije + ".bin";
+            if (File.Exists(path))
+            {
+                try
+                {
+                    File.Delete(path);
+                    MessageBox.Show("Rezervacija uspesno obrisana.");
+                }
+                catch (IOException)
+                {
+                    MessageBox.Show("Nije uspelo brisanje fajla trazene ponude.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ne postoji fajl koji ste pokusali da obrisete.");
+            }
+        }
 
+        public static List<Rezervacija> vratiRezervacijeZaKupca(int idKupca) {
+            List<Rezervacija> rezervacijeZaKupca = new List<Rezervacija>();
+            
             Stream stream;
             BinaryFormatter bf = new BinaryFormatter();
             Rezervacija rezervacija;
@@ -77,18 +100,44 @@ namespace car_rental_project.Modeli
                         stream = File.Open(filePath, FileMode.Open);
                         rezervacija = (Rezervacija)bf.Deserialize(stream);
                         stream.Close();
-                        if (rezervacija.IdKupca == kupac.Id)
+                        if (rezervacija.IdKupca == idKupca)
                         {
                             rezervacijeZaKupca.Add(rezervacija);
                         }
-                        
                     }
                 }
             }
-            
 
             return rezervacijeZaKupca;
 
         }
+
+        private int vratiNajveciId()
+        {
+            FileStream stream;
+            BinaryFormatter bf = new BinaryFormatter();
+            int max = 0;
+            Rezervacija rezervacija;
+            if (!Directory.Exists("Data\\Rezervacije"))
+            {
+                System.IO.Directory.CreateDirectory("Data\\Rezervacije");
+            }
+            string[] filePaths = Directory.GetFiles("Data\\Rezervacije");
+            if (filePaths.Length != 0)
+            {
+                foreach (string filePath in filePaths)
+                {
+                    stream = File.Open(filePath, FileMode.Open);
+                    rezervacija = (Rezervacija)bf.Deserialize(stream);
+                    stream.Close();
+                    if (max < rezervacija.Id)
+                    {
+                        max = rezervacija.Id;
+                    }
+                }
+            }
+            return max;
+        }
+
     }
 }

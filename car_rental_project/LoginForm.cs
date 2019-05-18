@@ -31,6 +31,7 @@ namespace car_rental_project
                 {
                     if (korisnik is Kupac)
                     {
+                        
                         MessageBox.Show("Uspesno ste se ulogovali kao korisnik.");
                         Form kupacForm = new KupacForm();
                         kupacForm.ShowDialog();

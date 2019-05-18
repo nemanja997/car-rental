@@ -73,6 +73,7 @@
             this.BtnRezervacija.TabIndex = 0;
             this.BtnRezervacija.Text = "Rezervacije";
             this.BtnRezervacija.UseVisualStyleBackColor = true;
+            this.BtnRezervacija.Click += new System.EventHandler(this.BtnRezervacija_Click);
             // 
             // BtnStatistika
             // 

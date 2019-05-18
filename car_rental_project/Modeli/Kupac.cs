@@ -37,7 +37,7 @@ namespace car_rental_project
 
         public override string ToString()
         {
-            return Ime + " " + Prezime + " (" + KorisnickoIme + ") " + "JMBG: " + Jmbg + "Telefon: " + Telefon;
+            return Id  + " " + Ime + " " + Prezime + " (" + KorisnickoIme + ") " + "JMBG: " + Jmbg + "Telefon: " + Telefon;
         }
 
         public static List<Kupac> vratiSveKupce()
@@ -69,6 +69,7 @@ namespace car_rental_project
         }
 
         public static bool izmeniKupca(string korisnickoIme,Kupac izmenjeniKupac) {
+            
             Stream stream;
             BinaryFormatter bf = new BinaryFormatter();
             string[] filePaths = Directory.GetFiles("Data\\Korisnici");
@@ -81,6 +82,7 @@ namespace car_rental_project
                     
                     if (korisnik is Kupac && korisnik.KorisnickoIme == korisnickoIme)
                     {
+                        izmenjeniKupac.Id = korisnik.Id;
                         try{
                             File.Delete(filePath);
                         }catch (IOException){}

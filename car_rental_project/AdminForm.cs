@@ -34,5 +34,11 @@ namespace car_rental_project
             Form adPonudaForm = new AdPonudaForm();
             adPonudaForm.ShowDialog();
         }
+
+        private void BtnRezervacija_Click(object sender, EventArgs e)
+        {
+            Form adRezervacijeForm = new AdRezervacijeForm();
+            adRezervacijeForm.ShowDialog();
+        }
     }
 }
