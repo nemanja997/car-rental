@@ -37,15 +37,6 @@ namespace car_rental_project
         {
             LBRezervacije.Items.Clear();
             listaSvihRezervacija = Rezervacija.vratiRezervacijeZaKupca(idKupca);
-            if (listaSvihRezervacija.Any())
-            {
-                MessageBox.Show("Lista nije praza");
-
-            }
-            else {
-
-                MessageBox.Show("lista je prazna");
-            }
             
             foreach (Rezervacija rezervacija in listaSvihRezervacija)
             {
@@ -56,7 +47,8 @@ namespace car_rental_project
         private void CBKupac_SelectedIndexChanged(object sender, EventArgs e)
         {
             Kupac selektovaniKupac = (Kupac)CBKupac.SelectedItem;
-            if (selektovaniKupac != null) {
+            if (selektovaniKupac != null)
+            {
                 popuniListuRezervacijaZaKupca(selektovaniKupac.Id);
                 CBDodajAutomobil.Items.Clear();
                 foreach (Automobil auto in listaSvihAutomobila)
@@ -81,34 +73,57 @@ namespace car_rental_project
         private void btnDodajRezervaciju_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show(((Kupac)CBKupac.SelectedItem).Id.ToString());
-
             int cena;
             bool uspesno = int.TryParse(TBoxDodajCena.Text.Trim(), out cena);
-            if (uspesno)
+            if (DTPDodajDatumOd.Value != null && DTPDodajDatumDo != null && TBoxDodajCena.Text.Trim() != "" &&
+                CBDodajAutomobil.SelectedIndex != -1)
             {
-                Rezervacija novaRezezervacija = new Rezervacija(
-                ((Automobil)CBDodajAutomobil.SelectedItem).Id,
-                ((Kupac)CBKupac.SelectedItem).Id,
-                DTPDodajDatumOd.Value,
-                DTPDodajDatumDo.Value,
-                cena
-                );
-
-                if (Rezervacija.napraviRezervaciju(novaRezezervacija))
+                if (DateTime.Compare(DTPDodajDatumOd.Value, DTPDodajDatumDo.Value) <= 0)
                 {
-                    popuniListuRezervacijaZaKupca(((Kupac)CBKupac.SelectedItem).Id);
-                    MessageBox.Show("Uspesno ste napravili rezervaciju.");
-                    
+                    if (uspesno)
+                    {
+                        Rezervacija novaRezezervacija = new Rezervacija(
+                        ((Automobil)CBDodajAutomobil.SelectedItem).Id,
+                        ((Kupac)CBKupac.SelectedItem).Id,
+                        DTPDodajDatumOd.Value,
+                        DTPDodajDatumDo.Value,
+                        cena
+                        );
+
+                        if (Rezervacija.napraviRezervaciju(novaRezezervacija))
+                        {
+                            popuniListuRezervacijaZaKupca(((Kupac)CBKupac.SelectedItem).Id);
+                            MessageBox.Show("Uspesno ste napravili rezervaciju.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nije uspelo pravljenje nove rezervacije.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cena nije validno unesena.");
+                    }
                 }
-                else {
-                    MessageBox.Show("Nije uspelo pravljenje nove rezervacije.");
+                else
+                {
+                    MessageBox.Show("Pocetni datum rezervacije mora biti manji od zavrsnog datuma.");
                 }
-
-
-
             }
-            
+            else
+            {
+                MessageBox.Show("Morate popuniti sva polja.");
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

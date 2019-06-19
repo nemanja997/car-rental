@@ -38,7 +38,7 @@ namespace car_rental_project.Modeli
 
         public override string ToString()
         {
-            return Id + "  " + IdKupca +  " " + DatumOd.ToString("dd.MM.yyyy.") + " - " + DatumDo.ToString("dd.MM.yyyy.") + "Cena: " + Cena.ToString() + " dinara po danu";
+            return  IdKupca +  " " + DatumOd.ToString("dd.MM.yyyy.") + " - " + DatumDo.ToString("dd.MM.yyyy.") + "Cena: " + Cena.ToString() + " dinara po danu";
         }
         static public bool napraviRezervaciju(Rezervacija rezervacija)
         {
@@ -68,6 +68,7 @@ namespace car_rental_project.Modeli
                 {
                     File.Delete(path);
                     MessageBox.Show("Rezervacija uspesno obrisana.");
+
                 }
                 catch (IOException)
                 {

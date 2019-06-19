@@ -96,7 +96,8 @@ namespace car_rental_project
         private void LBPonude_SelectedIndexChanged(object sender, EventArgs e)
         {
             Ponuda ponuda = (Ponuda)LBPonude.SelectedItem;
-            if (ponuda != null) {
+            if (ponuda != null)
+            {
                 foreach (Automobil a in listaSvihAutomobila)
                 {
                     if (a.Id == ponuda.IdAutomobila)
@@ -105,6 +106,8 @@ namespace car_rental_project
                     }
                 }
                 TBoxIzmenaCenaPoDanu.Text = ponuda.CenaPoDanu.ToString();
+                DTPIzmenaDatumDo.Value = ponuda.DatumDo;
+                DTPIzmenaDatumOd.Value = ponuda.DatumOd;
             }
         }
 
@@ -114,8 +117,8 @@ namespace car_rental_project
             bool uspesno = int.TryParse(TBoxIzmenaCenaPoDanu.Text.Trim(), out cena);
             Ponuda izabranaPonuda = (Ponuda)LBPonude.SelectedItem;
             if (izabranaPonuda != null)
-            {
-                int odnosDatuma = DateTime.Compare(DTPDodajDatumOd.Value, DTPDodajDatumDo.Value);
+            {   
+                int odnosDatuma = DateTime.Compare(DTPIzmenaDatumOd.Value, DTPIzmenaDatumDo.Value);
                 if (odnosDatuma <= 0)
                 {
                     if (uspesno)
