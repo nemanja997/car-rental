@@ -113,6 +113,38 @@ namespace car_rental_project.Modeli
 
         }
 
+        public static bool izmeniRezervaciju(int idRezervacije, Rezervacija novaRezervacija)
+        {
+            novaRezervacija.Id = idRezervacije;
+            Stream stream;
+            BinaryFormatter bf = new BinaryFormatter();
+            string[] filePaths = Directory.GetFiles("Data\\Rezervacije");
+            Rezervacija rezervacija;
+            foreach (string filePath in filePaths)
+            {
+                if (File.Exists(filePath))
+                {
+                    stream = File.Open(filePath, FileMode.Open);
+                    rezervacija = (Rezervacija)bf.Deserialize(stream);
+                    stream.Close();
+
+                    if (rezervacija.Id == idRezervacije)
+                    {
+                        try
+                        {
+                            File.Delete(filePath);
+                        }
+                        catch (IOException) { }
+                        stream = File.Open("Data\\Rezervacije\\" + novaRezervacija.Id + ".bin", FileMode.Create);
+                        bf.Serialize(stream, novaRezervacija);
+                        stream.Close();
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         private int vratiNajveciId()
         {
             FileStream stream;

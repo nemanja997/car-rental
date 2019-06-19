@@ -48,7 +48,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.DTPIzmeniDatumOd = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.TBoxIZmeniCena = new System.Windows.Forms.TextBox();
+            this.TBoxIzmeniCena = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnIzmeniRezervaciju = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@
             this.LBRezervacije.Name = "LBRezervacije";
             this.LBRezervacije.Size = new System.Drawing.Size(591, 121);
             this.LBRezervacije.TabIndex = 0;
+            this.LBRezervacije.SelectedIndexChanged += new System.EventHandler(this.LBRezervacije_SelectedIndexChanged);
             // 
             // CBKupac
             // 
@@ -85,16 +86,24 @@
             // 
             // DTPDodajDatumOd
             // 
+            this.DTPDodajDatumOd.CustomFormat = "dd.MM.yyyy.";
+            this.DTPDodajDatumOd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTPDodajDatumOd.Location = new System.Drawing.Point(80, 53);
+            this.DTPDodajDatumOd.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
+            this.DTPDodajDatumOd.MinDate = new System.DateTime(2019, 1, 5, 0, 0, 0, 0);
             this.DTPDodajDatumOd.Name = "DTPDodajDatumOd";
-            this.DTPDodajDatumOd.Size = new System.Drawing.Size(200, 20);
+            this.DTPDodajDatumOd.Size = new System.Drawing.Size(121, 20);
             this.DTPDodajDatumOd.TabIndex = 3;
             // 
             // DTPDodajDatumDo
             // 
+            this.DTPDodajDatumDo.CustomFormat = "dd.MM.yyyy.";
+            this.DTPDodajDatumDo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTPDodajDatumDo.Location = new System.Drawing.Point(80, 80);
+            this.DTPDodajDatumDo.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
+            this.DTPDodajDatumDo.MinDate = new System.DateTime(2019, 1, 5, 0, 0, 0, 0);
             this.DTPDodajDatumDo.Name = "DTPDodajDatumDo";
-            this.DTPDodajDatumDo.Size = new System.Drawing.Size(200, 20);
+            this.DTPDodajDatumDo.Size = new System.Drawing.Size(121, 20);
             this.DTPDodajDatumDo.TabIndex = 4;
             // 
             // TBoxDodajCena
@@ -180,7 +189,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnDodajRezervaciju);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 247);
+            this.groupBox1.Location = new System.Drawing.Point(12, 226);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(293, 187);
             this.groupBox1.TabIndex = 13;
@@ -194,23 +203,26 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.DTPIzmeniDatumOd);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.TBoxIZmeniCena);
+            this.groupBox2.Controls.Add(this.TBoxIzmeniCena);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.btnIzmeniRezervaciju);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(311, 247);
+            this.groupBox2.Location = new System.Drawing.Point(310, 226);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(293, 187);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Izmeni rezervaciju";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // DTPIzmeniDatumDo
             // 
+            this.DTPIzmeniDatumDo.CustomFormat = "dd.MM.yyyy.";
+            this.DTPIzmeniDatumDo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTPIzmeniDatumDo.Location = new System.Drawing.Point(80, 80);
+            this.DTPIzmeniDatumDo.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
+            this.DTPIzmeniDatumDo.MinDate = new System.DateTime(2019, 1, 5, 0, 0, 0, 0);
             this.DTPIzmeniDatumDo.Name = "DTPIzmeniDatumDo";
-            this.DTPIzmeniDatumDo.Size = new System.Drawing.Size(200, 20);
+            this.DTPIzmeniDatumDo.Size = new System.Drawing.Size(121, 20);
             this.DTPIzmeniDatumDo.TabIndex = 4;
             // 
             // CBIzmeniAutomobil
@@ -233,11 +245,14 @@
             // 
             // DTPIzmeniDatumOd
             // 
+            this.DTPIzmeniDatumOd.CustomFormat = "dd.MM.yyyy.";
+            this.DTPIzmeniDatumOd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DTPIzmeniDatumOd.Location = new System.Drawing.Point(80, 53);
+            this.DTPIzmeniDatumOd.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
+            this.DTPIzmeniDatumOd.MinDate = new System.DateTime(2019, 1, 5, 0, 0, 0, 0);
             this.DTPIzmeniDatumOd.Name = "DTPIzmeniDatumOd";
-            this.DTPIzmeniDatumOd.Size = new System.Drawing.Size(200, 20);
+            this.DTPIzmeniDatumOd.Size = new System.Drawing.Size(121, 20);
             this.DTPIzmeniDatumOd.TabIndex = 3;
-            this.DTPIzmeniDatumOd.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // label7
             // 
@@ -248,12 +263,12 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Datum do:";
             // 
-            // TBoxIZmeniCena
+            // TBoxIzmeniCena
             // 
-            this.TBoxIZmeniCena.Location = new System.Drawing.Point(80, 107);
-            this.TBoxIZmeniCena.Name = "TBoxIZmeniCena";
-            this.TBoxIZmeniCena.Size = new System.Drawing.Size(121, 20);
-            this.TBoxIZmeniCena.TabIndex = 5;
+            this.TBoxIzmeniCena.Location = new System.Drawing.Point(80, 107);
+            this.TBoxIzmeniCena.Name = "TBoxIzmeniCena";
+            this.TBoxIzmeniCena.Size = new System.Drawing.Size(121, 20);
+            this.TBoxIzmeniCena.TabIndex = 5;
             // 
             // label8
             // 
@@ -270,8 +285,9 @@
             this.btnIzmeniRezervaciju.Name = "btnIzmeniRezervaciju";
             this.btnIzmeniRezervaciju.Size = new System.Drawing.Size(121, 33);
             this.btnIzmeniRezervaciju.TabIndex = 6;
-            this.btnIzmeniRezervaciju.Text = "Dodaj rezervaciju";
+            this.btnIzmeniRezervaciju.Text = "Izmeni rezervaciju";
             this.btnIzmeniRezervaciju.UseVisualStyleBackColor = true;
+            this.btnIzmeniRezervaciju.Click += new System.EventHandler(this.btnIzmeniRezervaciju_Click);
             // 
             // label9
             // 
@@ -286,7 +302,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 446);
+            this.ClientSize = new System.Drawing.Size(615, 425);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnObrisiRezervaciju);
@@ -327,7 +343,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker DTPIzmeniDatumOd;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox TBoxIZmeniCena;
+        private System.Windows.Forms.TextBox TBoxIzmeniCena;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnIzmeniRezervaciju;
         private System.Windows.Forms.Label label9;

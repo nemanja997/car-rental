@@ -154,9 +154,7 @@ namespace car_rental_project
             else {
                 MessageBox.Show("Morate izabrati ponudu za izmenu.");
             }
-            
-
-            
+           
         }
     }
 }
