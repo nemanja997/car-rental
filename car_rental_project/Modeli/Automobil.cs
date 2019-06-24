@@ -77,16 +77,39 @@ namespace car_rental_project.Modeli
             }
         }
 
-        static public void obrisiAutomobil(int id)
+        static public void obrisiAutomobil(int idAutomobila)
         {
-            string path = "Data\\Automobili\\" + id + ".bin";
+            string path = "Data\\Automobili\\" + idAutomobila + ".bin";
             if (File.Exists(path))
             {
                 try
                 {
                     File.Delete(path);
                     MessageBox.Show("Automobil uspesno obrisan.");
-                    Ponuda.obrisiSvePonudeZaAutomobil(id);
+                    Ponuda.obrisiSvePonudeZaAutomobil(idAutomobila);
+                    
+                    FileStream stream;
+                    BinaryFormatter bf = new BinaryFormatter();
+
+                    //obrisi sve ponude za automobil
+                    List<Ponuda> listaSvihPonuda = Ponuda.vratiSvePonude();
+                    foreach (Ponuda ponuda in listaSvihPonuda)
+                    {
+                        if (ponuda.IdAutomobila == idAutomobila)
+                        {
+                            Ponuda.obrisiPonudu(ponuda.Id);
+                        }
+                    }
+
+                    //obrisi sve rezervacije za automobil
+                    List<Rezervacija> listaSvihRezervacija = Rezervacija.vratiSveRezervacije();
+                    foreach (Rezervacija rezervacija in listaSvihRezervacija)
+                    {
+                        if (rezervacija.IdAutomobila == idAutomobila)
+                        {
+                            Rezervacija.obrisiRezervaciju(rezervacija.Id);
+                        }
+                    }
                 }
                 catch (IOException)
                 {

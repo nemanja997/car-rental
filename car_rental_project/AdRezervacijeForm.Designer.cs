@@ -78,10 +78,12 @@
             // CBDodajAutomobil
             // 
             this.CBDodajAutomobil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBDodajAutomobil.DropDownWidth = 600;
+            this.CBDodajAutomobil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBDodajAutomobil.FormattingEnabled = true;
             this.CBDodajAutomobil.Location = new System.Drawing.Point(80, 25);
             this.CBDodajAutomobil.Name = "CBDodajAutomobil";
-            this.CBDodajAutomobil.Size = new System.Drawing.Size(121, 21);
+            this.CBDodajAutomobil.Size = new System.Drawing.Size(207, 24);
             this.CBDodajAutomobil.TabIndex = 2;
             // 
             // DTPDodajDatumOd
@@ -92,7 +94,7 @@
             this.DTPDodajDatumOd.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.DTPDodajDatumOd.MinDate = new System.DateTime(2019, 1, 5, 0, 0, 0, 0);
             this.DTPDodajDatumOd.Name = "DTPDodajDatumOd";
-            this.DTPDodajDatumOd.Size = new System.Drawing.Size(121, 20);
+            this.DTPDodajDatumOd.Size = new System.Drawing.Size(207, 20);
             this.DTPDodajDatumOd.TabIndex = 3;
             // 
             // DTPDodajDatumDo
@@ -103,14 +105,14 @@
             this.DTPDodajDatumDo.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.DTPDodajDatumDo.MinDate = new System.DateTime(2019, 1, 5, 0, 0, 0, 0);
             this.DTPDodajDatumDo.Name = "DTPDodajDatumDo";
-            this.DTPDodajDatumDo.Size = new System.Drawing.Size(121, 20);
+            this.DTPDodajDatumDo.Size = new System.Drawing.Size(207, 20);
             this.DTPDodajDatumDo.TabIndex = 4;
             // 
             // TBoxDodajCena
             // 
             this.TBoxDodajCena.Location = new System.Drawing.Point(80, 107);
             this.TBoxDodajCena.Name = "TBoxDodajCena";
-            this.TBoxDodajCena.Size = new System.Drawing.Size(121, 20);
+            this.TBoxDodajCena.Size = new System.Drawing.Size(207, 20);
             this.TBoxDodajCena.TabIndex = 5;
             // 
             // btnDodajRezervaciju
@@ -222,16 +224,18 @@
             this.DTPIzmeniDatumDo.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.DTPIzmeniDatumDo.MinDate = new System.DateTime(2019, 1, 5, 0, 0, 0, 0);
             this.DTPIzmeniDatumDo.Name = "DTPIzmeniDatumDo";
-            this.DTPIzmeniDatumDo.Size = new System.Drawing.Size(121, 20);
+            this.DTPIzmeniDatumDo.Size = new System.Drawing.Size(207, 20);
             this.DTPIzmeniDatumDo.TabIndex = 4;
             // 
             // CBIzmeniAutomobil
             // 
             this.CBIzmeniAutomobil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBIzmeniAutomobil.DropDownWidth = 600;
+            this.CBIzmeniAutomobil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBIzmeniAutomobil.FormattingEnabled = true;
             this.CBIzmeniAutomobil.Location = new System.Drawing.Point(80, 25);
             this.CBIzmeniAutomobil.Name = "CBIzmeniAutomobil";
-            this.CBIzmeniAutomobil.Size = new System.Drawing.Size(121, 21);
+            this.CBIzmeniAutomobil.Size = new System.Drawing.Size(207, 24);
             this.CBIzmeniAutomobil.TabIndex = 2;
             // 
             // label6
@@ -251,7 +255,7 @@
             this.DTPIzmeniDatumOd.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.DTPIzmeniDatumOd.MinDate = new System.DateTime(2019, 1, 5, 0, 0, 0, 0);
             this.DTPIzmeniDatumOd.Name = "DTPIzmeniDatumOd";
-            this.DTPIzmeniDatumOd.Size = new System.Drawing.Size(121, 20);
+            this.DTPIzmeniDatumOd.Size = new System.Drawing.Size(207, 20);
             this.DTPIzmeniDatumOd.TabIndex = 3;
             // 
             // label7
@@ -267,7 +271,7 @@
             // 
             this.TBoxIzmeniCena.Location = new System.Drawing.Point(80, 107);
             this.TBoxIzmeniCena.Name = "TBoxIzmeniCena";
-            this.TBoxIzmeniCena.Size = new System.Drawing.Size(121, 20);
+            this.TBoxIzmeniCena.Size = new System.Drawing.Size(207, 20);
             this.TBoxIzmeniCena.TabIndex = 5;
             // 
             // label8

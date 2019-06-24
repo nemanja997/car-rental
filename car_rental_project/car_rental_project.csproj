@@ -92,11 +92,23 @@
     <Compile Include="AdRezervacijeForm.Designer.cs">
       <DependentUpon>AdRezervacijeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdStatistikaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdStatistikaForm.Designer.cs">
+      <DependentUpon>AdStatistikaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="KupacForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="KupacForm.Designer.cs">
       <DependentUpon>KupacForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KuRezervacijeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KuRezervacijeForm.Designer.cs">
+      <DependentUpon>KuRezervacijeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Modeli\Automobil.cs" />
     <Compile Include="Modeli\MarkaAutomobila.cs" />
@@ -128,8 +140,14 @@
     <EmbeddedResource Include="AdRezervacijeForm.resx">
       <DependentUpon>AdRezervacijeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdStatistikaForm.resx">
+      <DependentUpon>AdStatistikaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KupacForm.resx">
       <DependentUpon>KupacForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KuRezervacijeForm.resx">
+      <DependentUpon>KuRezervacijeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

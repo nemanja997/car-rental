@@ -38,7 +38,14 @@ namespace car_rental_project.Modeli
 
         public override string ToString()
         {
-            return  IdKupca +  " " + DatumOd.ToString("dd.MM.yyyy.") + " - " + DatumDo.ToString("dd.MM.yyyy.") + "Cena: " + Cena.ToString() + " dinara po danu";
+            Kupac trenutniKupac =null;
+            List<Kupac> sviKupci = Kupac.vratiSveKupce();
+            foreach (Kupac kupac in sviKupci) {
+                if (kupac.Id == this.IdKupca) {
+                    trenutniKupac = kupac;
+                }
+            }
+            return "(" + trenutniKupac.Ime + " " + trenutniKupac.Prezime +  ") " + DatumOd.ToString("dd.MM.yyyy.") + " - " + DatumDo.ToString("dd.MM.yyyy.") + "Cena: " + Cena.ToString() + " dinara po danu";
         }
         static public bool napraviRezervaciju(Rezervacija rezervacija)
         {
@@ -111,6 +118,37 @@ namespace car_rental_project.Modeli
 
             return rezervacijeZaKupca;
 
+        }
+
+        
+
+        public static List<Rezervacija> vratiSveRezervacije()
+        {
+            List<Rezervacija> sveRezervacije = new List<Rezervacija>();
+
+            Stream stream;
+            BinaryFormatter bf = new BinaryFormatter();
+            Rezervacija rezervacija;
+            string[] filePaths = Directory.GetFiles("Data\\Rezervacije");
+
+            if (!Directory.Exists("Data\\Rezervacije"))
+            {
+                System.IO.Directory.CreateDirectory("Data\\Rezervacije");
+            }
+            if (filePaths.Length != 0)
+            {
+                foreach (string filePath in filePaths)
+                {
+                    if (File.Exists(filePath))
+                    {
+                        stream = File.Open(filePath, FileMode.Open);
+                        rezervacija = (Rezervacija)bf.Deserialize(stream);
+                        stream.Close();
+                        sveRezervacije.Add(rezervacija);
+                    }
+                }
+            }
+            return sveRezervacije;
         }
 
         public static bool izmeniRezervaciju(int idRezervacije, Rezervacija novaRezervacija)

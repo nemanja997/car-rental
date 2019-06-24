@@ -1,4 +1,5 @@
-﻿using System;
+﻿using car_rental_project.Modeli;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,13 +14,52 @@ namespace car_rental_project
     public partial class KupacForm : Form
     {
         Kupac kupac;
-        public KupacForm()
+        List<Rezervacija> listaSvihRezervacijaZaKupca;
+
+        public KupacForm(Kupac kupac)
         {
             InitializeComponent();
-            
+            this.kupac = kupac;
         }
-        
+
+        private void KupacForm_Load(object sender, EventArgs e)
+        {
+            label2.Text = "Ulogovani ste kao: " + kupac.Ime;
+            popuniListuRezervacijaZaKupca();
+        }
 
 
+        public void popuniListuRezervacijaZaKupca()
+        {
+            LBRezervacije.Items.Clear();
+            listaSvihRezervacijaZaKupca = Rezervacija.vratiRezervacijeZaKupca(kupac.Id);
+
+            foreach (Rezervacija rezervacija in listaSvihRezervacijaZaKupca)
+            {
+                LBRezervacije.Items.Add(rezervacija);
+            }
+        }
+
+        private void btnObrisiRezervaciju_Click(object sender, EventArgs e)
+        {
+            Rezervacija rezervaciajZaBrisanje = (Rezervacija)LBRezervacije.SelectedItem;
+            if (rezervaciajZaBrisanje != null)
+            {
+                Rezervacija.obrisiRezervaciju(rezervaciajZaBrisanje.Id);
+                popuniListuRezervacijaZaKupca();
+                MessageBox.Show("Uspesno ste obrisali rezervaciju");
+
+            }
+            else
+            {
+                MessageBox.Show("Morate odabrati rezervaciju za brisanje");
+            }
+        }
+
+        private void btnNapraviRezervaciju_Click(object sender, EventArgs e)
+        {
+            Form rezervacijeForm = new KuRezervacijeForm(kupac);
+            rezervacijeForm.ShowDialog();
+        }
     }
 }

@@ -165,27 +165,37 @@ namespace car_rental_project
         {
             if (LBAutomobili.SelectedIndex != -1)
             {
-                Automobil automobilZaIzmenu = (Automobil)LBAutomobili.SelectedItem;
-                Automobil noviAutomobil = new Automobil(
-                    CBIzmenaMarka.Text,
-                    CBIzmeniModel.Text,
-                    Int32.Parse(CBIzmeniGodiste.Text),
-                    CBIzmeniKubikaza.Text,
-                    CBIzmenaPogon.Text,
-                    CBIzmenaVrstaMenjaca.Text,
-                    CBIzmenaKaroserija.Text,
-                    CBIzmenaGorivo.Text,
-                    CBIzmenaBrojVrata.Text
-                    );
-                if (Automobil.izmeniAutomobil(automobilZaIzmenu.Id, noviAutomobil))
+                if (CBIzmenaBrojVrata.SelectedIndex != -1 && CBIzmenaGorivo.SelectedIndex != -1 &&
+                CBIzmenaGorivo.SelectedIndex != -1 && CBIzmeniModel.SelectedIndex != -1 &&
+                CBIzmenaVrstaMenjaca.SelectedIndex != -1 && CBIzmenaPogon.SelectedIndex != -1
+                && CBIzmenaKaroserija.SelectedIndex != -1)
+                {   
+                    Automobil automobilZaIzmenu = (Automobil)LBAutomobili.SelectedItem;
+                    Automobil noviAutomobil = new Automobil(
+                        CBIzmenaMarka.Text,
+                        CBIzmeniModel.Text,
+                        Int32.Parse(CBIzmeniGodiste.Text),
+                        CBIzmeniKubikaza.Text,
+                        CBIzmenaPogon.Text,
+                        CBIzmenaVrstaMenjaca.Text,
+                        CBIzmenaKaroserija.Text,
+                        CBIzmenaGorivo.Text,
+                        CBIzmenaBrojVrata.Text
+                        );
+                    if (Automobil.izmeniAutomobil(automobilZaIzmenu.Id, noviAutomobil))
+                    {
+                        MessageBox.Show("Uspesno ste izmenili automobil.");
+                        osveziListuAutomobila();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Izmena automobila nije uspela.");
+                    }
+                }
+                else
                 {
-                    MessageBox.Show("Uspesno ste izmenili automobil.");
+                    MessageBox.Show("Ne smete ostavljati prazna polja.");
                 }
-                else {
-                    MessageBox.Show("Izmena automobila nije uspela.");
-                }
-
-                osveziListuAutomobila();
             }
             else {
                 MessageBox.Show("Niste odabrali automobil za izmenu.");

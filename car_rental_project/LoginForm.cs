@@ -33,7 +33,7 @@ namespace car_rental_project
                     {
                         
                         MessageBox.Show("Uspesno ste se ulogovali kao korisnik.");
-                        Form kupacForm = new KupacForm();
+                        Form kupacForm = new KupacForm((Kupac)korisnik);
                         kupacForm.ShowDialog();
 
                     }

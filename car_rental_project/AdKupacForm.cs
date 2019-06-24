@@ -83,7 +83,7 @@ namespace car_rental_project
         {   if (LBKupci.SelectedIndex > -1)
             {
                 Kupac kupac = (Kupac)LBKupci.SelectedItem;
-                Korisnik.obrisiKorisnika(kupac.KorisnickoIme);
+                Korisnik.obrisiKorisnika(kupac.KorisnickoIme,kupac.Id);
                 osveziListuKupaca();
 
                 TBoxIzmenaKorisnickoIme.Text = "";

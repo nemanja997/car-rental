@@ -1,4 +1,5 @@
-﻿using System;
+﻿using car_rental_project.Modeli;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 namespace car_rental_project
 {
     [Serializable()]
-    class Korisnik
+    public class Korisnik
     {
         static Stream stream;
         static BinaryFormatter bf = new BinaryFormatter();
@@ -54,14 +55,28 @@ namespace car_rental_project
             }
         }
 
-        static public void obrisiKorisnika(string korisnickoIme)
-        {
+        static public void obrisiKorisnika(string korisnickoIme,int IdKorisnika)
+        {   
             string path = "Data\\Korisnici\\" + korisnickoIme + ".bin";
             if (File.Exists(path)){
 
                 try{
                     File.Delete(path);
                     MessageBox.Show("Korisnik uspesno obrisan.");
+
+                    FileStream stream;
+                    BinaryFormatter bf = new BinaryFormatter();
+
+                    //obrisi sve rezervacije vezane za korisnika
+                    List<Rezervacija> listaSvihRezervacija = Rezervacija.vratiSveRezervacije();
+                    foreach (Rezervacija rezervacija in listaSvihRezervacija)
+                    {
+                        if (rezervacija.IdKupca == IdKorisnika)
+                        {
+                            Rezervacija.obrisiRezervaciju(rezervacija.Id);
+                        }
+                    }
+
                 }
                 catch (IOException){
                     MessageBox.Show("Nije uspelo brisanje fajla za trazenog korisnika.");

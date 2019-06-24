@@ -83,6 +83,7 @@
             this.BtnStatistika.TabIndex = 0;
             this.BtnStatistika.Text = "Statistika";
             this.BtnStatistika.UseVisualStyleBackColor = true;
+            this.BtnStatistika.Click += new System.EventHandler(this.BtnStatistika_Click);
             // 
             // AdminForm
             // 

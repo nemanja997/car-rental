@@ -70,7 +70,6 @@ namespace car_rental_project
                 Rezervacija.obrisiRezervaciju(rezervaciajZaBrisanje.Id);
                 popuniListuRezervacijaZaKupca(((Kupac)CBKupac.SelectedItem).Id);
             }
-            
         }
 
         private void btnDodajRezervaciju_Click(object sender, EventArgs e)
@@ -134,7 +133,6 @@ namespace car_rental_project
                     {
                         if (uspesnoCena)
                         {
-                        
                                 Rezervacija novaRezezervacija = new Rezervacija(
                                         ((Automobil)CBIzmeniAutomobil.SelectedItem).Id,
                                         ((Kupac)CBKupac.SelectedItem).Id,

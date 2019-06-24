@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace car_rental_project
 {   
     [Serializable()]
-    class Kupac : Korisnik
+    public class Kupac : Korisnik
     {
         
         private string ime;

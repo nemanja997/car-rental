@@ -38,6 +38,7 @@ namespace car_rental_project.Modeli
 
         public override string ToString()
         {
+            List<Automobil> listaSvihAutomobila = Automobil.vratiSveAutomobile();
             return Id + " " + "Id automobila:" + IdAutomobila + " " + DatumOd.ToString("dd.MM.yyyy.") + "-" + DatumDo.ToString("dd.MM.yyyy.") + "Cena po danu:" + CenaPoDanu.ToString();
         }
 
@@ -122,9 +123,9 @@ namespace car_rental_project.Modeli
             return listaSvihPonuda; 
         }
 
-        static public void obrisiPonudu(int id)
+        static public void obrisiPonudu(int idPonude)
         {
-            string path = "Data\\Ponude\\" + id + ".bin";
+            string path = "Data\\Ponude\\" + idPonude + ".bin";
             if (File.Exists(path))
             {
                 try

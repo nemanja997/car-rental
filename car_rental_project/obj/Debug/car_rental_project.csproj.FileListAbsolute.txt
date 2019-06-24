@@ -14,3 +14,5 @@ C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog program
 C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.AdPonudaForm.resources
 C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.AdRezervacijeForm.resources
 C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.KupacForm.resources
+C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.AdStatistikaForm.resources
+C:\Users\Nemanja\Desktop\Faks\Treca godina\semestar II\Tehnike vizuelnog programiranja\Prvi projekat\car-rental\car_rental_project\car_rental_project\obj\Debug\car_rental_project.KuRezervacijeForm.resources
