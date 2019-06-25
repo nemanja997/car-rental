@@ -111,6 +111,7 @@
       <DependentUpon>KuRezervacijeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Modeli\Automobil.cs" />
+    <Compile Include="Modeli\Datum.cs" />
     <Compile Include="Modeli\MarkaAutomobila.cs" />
     <Compile Include="Modeli\Ponuda.cs" />
     <Compile Include="Modeli\Rezervacija.cs" />

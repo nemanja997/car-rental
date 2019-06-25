@@ -250,6 +250,7 @@
             this.btnPrikaziPonudu.TabIndex = 3;
             this.btnPrikaziPonudu.Text = "Prikazi dostupne termine odabranog automobila";
             this.btnPrikaziPonudu.UseVisualStyleBackColor = true;
+            this.btnPrikaziPonudu.Click += new System.EventHandler(this.btnPrikaziPonudu_Click);
             // 
             // LBPonude
             // 
@@ -279,6 +280,7 @@
             this.DTPDatumOd.Name = "DTPDatumOd";
             this.DTPDatumOd.Size = new System.Drawing.Size(200, 20);
             this.DTPDatumOd.TabIndex = 5;
+            this.DTPDatumOd.ValueChanged += new System.EventHandler(this.DTPDatumOd_ValueChanged);
             // 
             // DTPDatumDo
             // 
@@ -288,6 +290,7 @@
             this.DTPDatumDo.Name = "DTPDatumDo";
             this.DTPDatumDo.Size = new System.Drawing.Size(200, 20);
             this.DTPDatumDo.TabIndex = 5;
+            this.DTPDatumDo.ValueChanged += new System.EventHandler(this.DTPDatumDo_ValueChanged);
             // 
             // label11
             // 
@@ -314,6 +317,7 @@
             this.TBoxUkupnaCena.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBoxUkupnaCena.Location = new System.Drawing.Point(330, 453);
             this.TBoxUkupnaCena.Name = "TBoxUkupnaCena";
+            this.TBoxUkupnaCena.ReadOnly = true;
             this.TBoxUkupnaCena.Size = new System.Drawing.Size(132, 31);
             this.TBoxUkupnaCena.TabIndex = 6;
             // 
