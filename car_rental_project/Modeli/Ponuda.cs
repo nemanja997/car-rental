@@ -39,7 +39,7 @@ namespace car_rental_project.Modeli
         public override string ToString()
         {
             List<Automobil> listaSvihAutomobila = Automobil.vratiSveAutomobile();
-            return DatumOd.ToString("dd.MM.yyyy.") + "-" + DatumDo.ToString("dd.MM.yyyy.") + "Cena po danu:" + CenaPoDanu.ToString();
+            return "( " + DatumOd.ToString("dd.MM.yyyy.") + "-" + DatumDo.ToString("dd.MM.yyyy.") + " ), Cena po danu:" + CenaPoDanu.ToString();
         }
 
         public static bool dodajPonudu(Ponuda ponuda)

@@ -52,7 +52,7 @@ namespace car_rental_project.Modeli
 
         public override string ToString()
         {
-            return Id + " " + Marka + " " + Model + " " + Godiste + " god. " + Kubikaza + " " + Gorivo +" " + VrstaMenjaca + " " + Karoserija + " " + Pogon + " pogon" + BrojVrata + " vrata";
+            return Marka + " " + Model + ", " + Godiste + " godiste, " + Kubikaza + ", " + Gorivo +", " + VrstaMenjaca + ", " + Karoserija + ", " + Pogon + " pogon, " + BrojVrata + " vrata";
         }
 
         public static bool dodajAutomobil(Automobil automobil)

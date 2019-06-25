@@ -45,7 +45,7 @@ namespace car_rental_project.Modeli
                     trenutniKupac = kupac;
                 }
             }
-            return "(" + trenutniKupac.Ime + " " + trenutniKupac.Prezime +  ") " + DatumOd.ToString("dd.MM.yyyy.") + " - " + DatumDo.ToString("dd.MM.yyyy.") + "Cena: " + Cena.ToString() + " dinara po danu";
+            return trenutniKupac.Ime + " " + trenutniKupac.Prezime + ", ( " + DatumOd.ToString("dd.MM.yyyy.") + " - " + DatumDo.ToString("dd.MM.yyyy.") + " ), Cena rezervacije: " + Cena.ToString();
         }
         static public bool napraviRezervaciju(Rezervacija rezervacija)
         {

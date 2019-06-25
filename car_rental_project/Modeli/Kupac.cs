@@ -37,7 +37,7 @@ namespace car_rental_project
 
         public override string ToString()
         {
-            return Id  + " " + Ime + " " + Prezime + " (" + KorisnickoIme + ") " + "JMBG: " + Jmbg + "Telefon: " + Telefon;
+            return Ime + " " + Prezime + " (" + KorisnickoIme + ") " + ", JMBG: " + Jmbg + ", Telefon: " + Telefon;
         }
 
         public static List<Kupac> vratiSveKupce()
