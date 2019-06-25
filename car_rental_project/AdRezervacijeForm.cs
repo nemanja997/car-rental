@@ -82,7 +82,6 @@ namespace car_rental_project
             {
                 if (Datum.validanOpseg(DTPDodajDatumOd.Value, DTPDodajDatumDo.Value))
                 {
-                    MessageBox.Show(DTPDodajDatumOd.Value.ToString() + DTPDodajDatumDo.Value.ToString());
                     if (uspesnoCena)
                     {
                         Rezervacija novaRezezervacija = new Rezervacija(

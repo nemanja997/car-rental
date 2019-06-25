@@ -47,8 +47,6 @@ namespace car_rental_project
             {
                 Rezervacija.obrisiRezervaciju(rezervaciajZaBrisanje.Id);
                 popuniListuRezervacijaZaKupca();
-                MessageBox.Show("Uspesno ste obrisali rezervaciju");
-
             }
             else
             {
@@ -58,8 +56,14 @@ namespace car_rental_project
 
         private void btnNapraviRezervaciju_Click(object sender, EventArgs e)
         {
+            DialogResult rezultatRezervacije = new DialogResult();
             Form rezervacijeForm = new KuRezervacijeForm(kupac);
-            rezervacijeForm.ShowDialog();
+            rezultatRezervacije = rezervacijeForm.ShowDialog();
+            if (rezultatRezervacije == DialogResult.OK)
+            {
+                popuniListuRezervacijaZaKupca();
+            }
+
         }
     }
 }

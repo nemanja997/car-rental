@@ -72,83 +72,92 @@
             // CBoxMarka
             // 
             this.CBoxMarka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBoxMarka.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBoxMarka.FormattingEnabled = true;
             this.CBoxMarka.Location = new System.Drawing.Point(12, 40);
             this.CBoxMarka.Name = "CBoxMarka";
-            this.CBoxMarka.Size = new System.Drawing.Size(146, 21);
+            this.CBoxMarka.Size = new System.Drawing.Size(146, 28);
             this.CBoxMarka.TabIndex = 1;
             this.CBoxMarka.SelectedIndexChanged += new System.EventHandler(this.CBoxMarka_SelectedIndexChanged);
             // 
             // CBoxModel
             // 
             this.CBoxModel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBoxModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBoxModel.FormattingEnabled = true;
             this.CBoxModel.Location = new System.Drawing.Point(12, 95);
             this.CBoxModel.Name = "CBoxModel";
-            this.CBoxModel.Size = new System.Drawing.Size(146, 21);
+            this.CBoxModel.Size = new System.Drawing.Size(146, 28);
             this.CBoxModel.TabIndex = 1;
             // 
             // CBoxKubikaza
             // 
             this.CBoxKubikaza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBoxKubikaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBoxKubikaza.FormattingEnabled = true;
             this.CBoxKubikaza.Location = new System.Drawing.Point(197, 40);
             this.CBoxKubikaza.Name = "CBoxKubikaza";
-            this.CBoxKubikaza.Size = new System.Drawing.Size(146, 21);
+            this.CBoxKubikaza.Size = new System.Drawing.Size(146, 28);
             this.CBoxKubikaza.TabIndex = 1;
             // 
             // CBoxKaroserija
             // 
             this.CBoxKaroserija.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBoxKaroserija.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBoxKaroserija.FormattingEnabled = true;
             this.CBoxKaroserija.Location = new System.Drawing.Point(197, 95);
             this.CBoxKaroserija.Name = "CBoxKaroserija";
-            this.CBoxKaroserija.Size = new System.Drawing.Size(146, 21);
+            this.CBoxKaroserija.Size = new System.Drawing.Size(146, 28);
             this.CBoxKaroserija.TabIndex = 1;
             // 
             // CBoxGorivo
             // 
             this.CBoxGorivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBoxGorivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBoxGorivo.FormattingEnabled = true;
             this.CBoxGorivo.Location = new System.Drawing.Point(389, 40);
             this.CBoxGorivo.Name = "CBoxGorivo";
-            this.CBoxGorivo.Size = new System.Drawing.Size(146, 21);
+            this.CBoxGorivo.Size = new System.Drawing.Size(146, 28);
             this.CBoxGorivo.TabIndex = 1;
             // 
             // CBoxPogon
             // 
             this.CBoxPogon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBoxPogon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBoxPogon.FormattingEnabled = true;
             this.CBoxPogon.Location = new System.Drawing.Point(389, 95);
             this.CBoxPogon.Name = "CBoxPogon";
-            this.CBoxPogon.Size = new System.Drawing.Size(146, 21);
+            this.CBoxPogon.Size = new System.Drawing.Size(146, 28);
             this.CBoxPogon.TabIndex = 1;
             // 
             // CBoxMenjac
             // 
             this.CBoxMenjac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBoxMenjac.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBoxMenjac.FormattingEnabled = true;
             this.CBoxMenjac.Location = new System.Drawing.Point(389, 150);
             this.CBoxMenjac.Name = "CBoxMenjac";
-            this.CBoxMenjac.Size = new System.Drawing.Size(146, 21);
+            this.CBoxMenjac.Size = new System.Drawing.Size(146, 28);
             this.CBoxMenjac.TabIndex = 1;
             // 
             // CBoxBrojVrata
             // 
             this.CBoxBrojVrata.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBoxBrojVrata.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBoxBrojVrata.FormattingEnabled = true;
             this.CBoxBrojVrata.Location = new System.Drawing.Point(197, 150);
             this.CBoxBrojVrata.Name = "CBoxBrojVrata";
-            this.CBoxBrojVrata.Size = new System.Drawing.Size(146, 21);
+            this.CBoxBrojVrata.Size = new System.Drawing.Size(146, 28);
             this.CBoxBrojVrata.TabIndex = 1;
             // 
             // CBoxGodiste
             // 
             this.CBoxGodiste.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBoxGodiste.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBoxGodiste.FormattingEnabled = true;
             this.CBoxGodiste.Location = new System.Drawing.Point(12, 150);
             this.CBoxGodiste.Name = "CBoxGodiste";
-            this.CBoxGodiste.Size = new System.Drawing.Size(146, 21);
+            this.CBoxGodiste.Size = new System.Drawing.Size(146, 28);
             this.CBoxGodiste.TabIndex = 1;
             // 
             // label1

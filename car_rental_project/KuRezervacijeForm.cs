@@ -18,6 +18,7 @@ namespace car_rental_project
         List<Ponuda> listaSvihPonuda;
         List<MarkaAutomobila> listaSvihMarki;
         int cenaRezervacije;
+        Automobil izabraniAuto;
 
         public KuRezervacijeForm(Kupac kupac)
         {
@@ -30,7 +31,38 @@ namespace car_rental_project
 
         private void btnRezervisi_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (DTPDatumOd.Value != null && DTPDatumDo != null && TBoxUkupnaCena.Text.Trim() != "")
+            {
+                if (Datum.validanOpseg(DTPDatumOd.Value, DTPDatumDo.Value))
+                {
+                    Rezervacija novaRezezervacija = new Rezervacija(
+                    izabraniAuto.Id,
+                    kupac.Id,
+                    DTPDatumOd.Value,
+                    DTPDatumDo.Value,
+                    Int32.Parse(TBoxUkupnaCena.Text)
+                    );
+
+                    if (Rezervacija.napraviRezervaciju(novaRezezervacija))
+                    {
+                        MessageBox.Show("Uspesno ste napravili rezervaciju.");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nije uspelo pravljenje nove rezervacije.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Morate izabrati validan opseg datuma.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Morate popuniti sva polja.");
+            }
         }
 
         private void KuRezervacijeForm_Load(object sender, EventArgs e)
@@ -97,12 +129,9 @@ namespace car_rental_project
 
         private void btnPrikaziPonudu_Click(object sender, EventArgs e)
         {   
-            Automobil izabraniAuto = null;
-
             LBPonude.Items.Clear();
             
             foreach (Automobil auto in listaSvihAutomobila) {
-                MessageBox.Show(CBoxGodiste.Text);
                 if (CBoxMarka.Text == auto.Marka && CBoxModel.Text == auto.Model &&
                     CBoxMenjac.Text == auto.VrstaMenjaca && CBoxPogon.Text == auto.Pogon &&
                     CBoxKaroserija.Text == auto.Karoserija && CBoxGorivo.Text == auto.Gorivo &&
@@ -141,7 +170,7 @@ namespace car_rental_project
 
         public int izracunajCenuZaOpsegDatuma(int cenaPoDanu, DateTime datumOd, DateTime datumDo) {
             int rezultat, brojDana;
-            brojDana = (datumDo - datumOd).Days;
+            brojDana = (datumDo - datumOd).Days + 1;
             rezultat = brojDana * cenaPoDanu;
             if (Datum.validanOpseg(datumOd, datumDo))
             {
