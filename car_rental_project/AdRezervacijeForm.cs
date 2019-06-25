@@ -80,7 +80,7 @@ namespace car_rental_project
             if (DTPDodajDatumOd.Value != null && DTPDodajDatumDo != null && TBoxDodajCena.Text.Trim() != "" &&
                 CBDodajAutomobil.SelectedIndex != -1)
             {
-                if (DateTime.Compare(DTPDodajDatumOd.Value, DTPDodajDatumDo.Value) <= 0)
+                if (Datum.validanOpseg(DTPDodajDatumOd.Value, DTPDodajDatumDo.Value))
                 {
                     MessageBox.Show(DTPDodajDatumOd.Value.ToString() + DTPDodajDatumDo.Value.ToString());
                     if (uspesnoCena)
@@ -129,7 +129,7 @@ namespace car_rental_project
                 if (DTPIzmeniDatumOd.Value != null && DTPIzmeniDatumDo != null && TBoxIzmeniCena.Text.Trim() != "" &&
                 CBIzmeniAutomobil.SelectedIndex != -1)
                 {
-                    if (DateTime.Compare(DTPIzmeniDatumOd.Value, DTPIzmeniDatumDo.Value) <= 0)
+                    if (Datum.validanOpseg(DTPIzmeniDatumOd.Value, DTPIzmeniDatumDo.Value))
                     {
                         if (uspesnoCena)
                         {

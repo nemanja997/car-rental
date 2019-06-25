@@ -106,6 +106,7 @@ namespace car_rental_project
                     }
                 }
                 TBoxIzmenaCenaPoDanu.Text = ponuda.CenaPoDanu.ToString();
+                TBoxIzmenaCenaPoDanu.Text = ponuda.CenaPoDanu.ToString();
                 DTPIzmenaDatumDo.Value = ponuda.DatumDo;
                 DTPIzmenaDatumOd.Value = ponuda.DatumOd;
             }
