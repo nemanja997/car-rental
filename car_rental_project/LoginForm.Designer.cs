@@ -38,16 +38,19 @@
             // 
             // TBoxKorisnickoIme
             // 
-            this.TBoxKorisnickoIme.Location = new System.Drawing.Point(181, 154);
+            this.TBoxKorisnickoIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBoxKorisnickoIme.Location = new System.Drawing.Point(59, 120);
             this.TBoxKorisnickoIme.Name = "TBoxKorisnickoIme";
-            this.TBoxKorisnickoIme.Size = new System.Drawing.Size(201, 20);
+            this.TBoxKorisnickoIme.Size = new System.Drawing.Size(336, 26);
             this.TBoxKorisnickoIme.TabIndex = 0;
+            this.TBoxKorisnickoIme.TextChanged += new System.EventHandler(this.TBoxKorisnickoIme_TextChanged);
             // 
             // TBoxLozinka
             // 
-            this.TBoxLozinka.Location = new System.Drawing.Point(181, 199);
+            this.TBoxLozinka.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBoxLozinka.Location = new System.Drawing.Point(59, 189);
             this.TBoxLozinka.Name = "TBoxLozinka";
-            this.TBoxLozinka.Size = new System.Drawing.Size(201, 20);
+            this.TBoxLozinka.Size = new System.Drawing.Size(336, 26);
             this.TBoxLozinka.TabIndex = 1;
             this.TBoxLozinka.UseSystemPasswordChar = true;
             // 
@@ -55,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(177, 49);
+            this.label1.Location = new System.Drawing.Point(170, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 24);
             this.label1.TabIndex = 2;
@@ -66,32 +69,32 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 149);
+            this.label2.Location = new System.Drawing.Point(55, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 24);
+            this.label2.Size = new System.Drawing.Size(138, 24);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Korisnicko ime";
+            this.label2.Text = "Korisnicko ime:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(101, 195);
+            this.label3.Location = new System.Drawing.Point(55, 162);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 24);
+            this.label3.Size = new System.Drawing.Size(79, 24);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Lozinka";
+            this.label3.Text = "Lozinka:";
             // 
             // Button_login
             // 
-            this.Button_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Button_login.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Button_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_login.ForeColor = System.Drawing.Color.White;
-            this.Button_login.Location = new System.Drawing.Point(181, 249);
+            this.Button_login.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Button_login.Location = new System.Drawing.Point(59, 238);
             this.Button_login.Margin = new System.Windows.Forms.Padding(0);
             this.Button_login.Name = "Button_login";
-            this.Button_login.Size = new System.Drawing.Size(111, 38);
+            this.Button_login.Size = new System.Drawing.Size(336, 53);
             this.Button_login.TabIndex = 5;
             this.Button_login.Text = "Nastavi";
             this.Button_login.UseVisualStyleBackColor = false;
@@ -101,7 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 353);
+            this.ClientSize = new System.Drawing.Size(455, 353);
             this.Controls.Add(this.Button_login);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
