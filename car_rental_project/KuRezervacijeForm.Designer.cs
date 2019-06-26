@@ -60,13 +60,14 @@
             // 
             // btnRezervisi
             // 
+            this.btnRezervisi.BackColor = System.Drawing.Color.PaleGreen;
             this.btnRezervisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRezervisi.Location = new System.Drawing.Point(11, 522);
             this.btnRezervisi.Name = "btnRezervisi";
             this.btnRezervisi.Size = new System.Drawing.Size(523, 69);
             this.btnRezervisi.TabIndex = 0;
             this.btnRezervisi.Text = "Rezervisi";
-            this.btnRezervisi.UseVisualStyleBackColor = true;
+            this.btnRezervisi.UseVisualStyleBackColor = false;
             this.btnRezervisi.Click += new System.EventHandler(this.btnRezervisi_Click);
             // 
             // CBoxMarka
@@ -252,13 +253,15 @@
             // 
             // btnPrikaziPonudu
             // 
+            this.btnPrikaziPonudu.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnPrikaziPonudu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrikaziPonudu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnPrikaziPonudu.Location = new System.Drawing.Point(12, 187);
             this.btnPrikaziPonudu.Name = "btnPrikaziPonudu";
             this.btnPrikaziPonudu.Size = new System.Drawing.Size(524, 44);
             this.btnPrikaziPonudu.TabIndex = 3;
             this.btnPrikaziPonudu.Text = "Prikazi dostupne termine odabranog automobila";
-            this.btnPrikaziPonudu.UseVisualStyleBackColor = true;
+            this.btnPrikaziPonudu.UseVisualStyleBackColor = false;
             this.btnPrikaziPonudu.Click += new System.EventHandler(this.btnPrikaziPonudu_Click);
             // 
             // LBPonude

@@ -19,8 +19,8 @@ namespace car_rental_project.Modeli
             }
         }
         public static bool daLiJeOpsegUDozvoljenomOpsegu(DateTime trazeniDatum1, DateTime trazeniDatum2, DateTime dozvoljeniDatum1, DateTime dozvoljeniDatum2) {
-            if (trazeniDatum1.Date.CompareTo(dozvoljeniDatum1.Date) > 0 && trazeniDatum1.Date.CompareTo(dozvoljeniDatum2.Date) <= 0 &&
-                trazeniDatum2.Date.CompareTo(dozvoljeniDatum1.Date) > 0 && trazeniDatum2.Date.CompareTo(dozvoljeniDatum2.Date) <= 0)
+            if (trazeniDatum1.Date.CompareTo(dozvoljeniDatum1.Date) >= 0 && trazeniDatum1.Date.CompareTo(dozvoljeniDatum2.Date) <= 0 &&
+                trazeniDatum2.Date.CompareTo(dozvoljeniDatum1.Date) >= 0 && trazeniDatum2.Date.CompareTo(dozvoljeniDatum2.Date) <= 0)
             {
                 return true;
             }

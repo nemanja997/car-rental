@@ -31,42 +31,56 @@ namespace car_rental_project
 
         private void btnRezervisi_Click(object sender, EventArgs e)
         {
-            if (DTPDatumOd.Value != null && DTPDatumDo != null && TBoxUkupnaCena.Text.Trim() != "")
+            Ponuda ponuda = (Ponuda)LBPonude.SelectedItem;
+            if (ponuda != null)
             {
-                if (Datum.validanOpseg(DTPDatumOd.Value, DTPDatumDo.Value))
+                if (DTPDatumOd.Value != null && DTPDatumDo != null && TBoxUkupnaCena.Text.Trim() != "")
                 {
-                    Rezervacija novaRezezervacija = new Rezervacija(
-                    izabraniAuto.Id,
-                    kupac.Id,
-                    DTPDatumOd.Value,
-                    DTPDatumDo.Value,
-                    Int32.Parse(TBoxUkupnaCena.Text)
-                    );
-
-                    if (Rezervacija.napraviRezervaciju(novaRezezervacija))
+                    if (Datum.validanOpseg(DTPDatumOd.Value, DTPDatumDo.Value))
                     {
-                        MessageBox.Show("Uspesno ste napravili rezervaciju.");
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        if (Datum.daLiJeOpsegUDozvoljenomOpsegu(DTPDatumOd.Value, DTPDatumDo.Value, ponuda.DatumOd, ponuda.DatumDo))
+                        {
+                            Rezervacija novaRezezervacija = new Rezervacija(
+                        izabraniAuto.Id,
+                        kupac.Id,
+                        DTPDatumOd.Value,
+                        DTPDatumDo.Value,
+                        Int32.Parse(TBoxUkupnaCena.Text)
+                        );
+
+                            if (Rezervacija.napraviRezervaciju(novaRezezervacija))
+                            {
+                                MessageBox.Show("Uspesno ste napravili rezervaciju.");
+                                this.DialogResult = DialogResult.OK;
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Nije uspelo pravljenje nove rezervacije.");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Morate izabrati datume u okviru ponude.");
+                        }
+
                     }
                     else
                     {
-                        MessageBox.Show("Nije uspelo pravljenje nove rezervacije.");
+                        MessageBox.Show("Morate izabrati validan opseg datuma.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Morate izabrati validan opseg datuma.");
+                    MessageBox.Show("Morate popuniti sva polja.");
                 }
             }
-            else
-            {
-                MessageBox.Show("Morate popuniti sva polja.");
+            else {
+                MessageBox.Show("Morate izabrati ponudu.");
             }
+            
         }
-
-        private void KuRezervacijeForm_Load(object sender, EventArgs e)
-        {
+        private void napuniComboBoxove() {
             string[] vrstePogona = { "Prednji", "Zadnji", "4x4" };
             string[] vrsteMenjaca = { "Manuelni", "Automatik" };
             string[] brojVrata = { "2/3", "4/5" };
@@ -74,7 +88,7 @@ namespace car_rental_project
             string[] vrsteKaroserija = { "Karavan", "Limuzina", "Kupe", "Kabriolet", "Dzip/SUV" };
             string[] vsteKubikaze = { "800 kubika", "1000 kubika", "1200 kubika", "1300 kubika", "1400 kubika", "1500 kubika"
                     , "1600 kubika", "1700 kubika", "1900 kubika", "2000 kubika", "2200 kubika", "2500 kubika", "3000 kubika", "3500 kubika" };
-            
+
             //Punjenje ComboBox-ova
             listaSvihMarki = MarkaAutomobila.vratiSveMarke();
             foreach (MarkaAutomobila model in listaSvihMarki)
@@ -110,10 +124,14 @@ namespace car_rental_project
                 CBoxGodiste.Items.Add(i);
             }
         }
+        private void KuRezervacijeForm_Load(object sender, EventArgs e)
+        {
+            napuniComboBoxove();
+        }
 
         private void CBoxMarka_SelectedIndexChanged(object sender, EventArgs e)
         {
-                CBoxModel.Items.Clear();
+            CBoxModel.Items.Clear();
             string odabranaMarka = (string)CBoxMarka.SelectedItem;
             foreach (MarkaAutomobila marka in listaSvihMarki)
             {
@@ -128,33 +146,47 @@ namespace car_rental_project
         }
 
         private void btnPrikaziPonudu_Click(object sender, EventArgs e)
-        {   
-            LBPonude.Items.Clear();
-            
-            foreach (Automobil auto in listaSvihAutomobila) {
-                if (CBoxMarka.Text == auto.Marka && CBoxModel.Text == auto.Model &&
-                    CBoxMenjac.Text == auto.VrstaMenjaca && CBoxPogon.Text == auto.Pogon &&
-                    CBoxKaroserija.Text == auto.Karoserija && CBoxGorivo.Text == auto.Gorivo &&
-                    CBoxBrojVrata.Text == auto.BrojVrata && CBoxGodiste.Text == auto.Godiste.ToString() &&
-                    CBoxKubikaza.Text == auto.Kubikaza)
-                {
-                    izabraniAuto = auto;
-                }
-            }
-            if (izabraniAuto != null)
+        {
+            if (CBoxMarka.SelectedIndex != -1 && CBoxModel.SelectedIndex != -1 &&
+                CBoxMenjac.SelectedIndex != -1 && CBoxPogon.SelectedIndex != -1 &&
+                    CBoxKaroserija.SelectedIndex != -1 && CBoxGorivo.SelectedIndex != -1 &&
+                CBoxBrojVrata.SelectedIndex != -1 && CBoxGodiste.SelectedIndex != -1 &&
+                CBoxKubikaza.SelectedIndex != -1)
             {
-                foreach (Ponuda ponuda in listaSvihPonuda) {
-                    if (ponuda.IdAutomobila == izabraniAuto.Id)
+                LBPonude.Items.Clear();
+
+                foreach (Automobil auto in listaSvihAutomobila)
+                {
+                    if (CBoxMarka.Text == auto.Marka && CBoxModel.Text == auto.Model &&
+                        CBoxMenjac.Text == auto.VrstaMenjaca && CBoxPogon.Text == auto.Pogon &&
+                        CBoxKaroserija.Text == auto.Karoserija && CBoxGorivo.Text == auto.Gorivo &&
+                        CBoxBrojVrata.Text == auto.BrojVrata && CBoxGodiste.Text == auto.Godiste.ToString() &&
+                        CBoxKubikaza.Text == auto.Kubikaza)
                     {
-                        LBPonude.Items.Add(ponuda);
+                        izabraniAuto = auto;
                     }
                 }
+                if (izabraniAuto != null)
+                {
+                    foreach (Ponuda ponuda in listaSvihPonuda)
+                    {
+                        if (ponuda.IdAutomobila == izabraniAuto.Id)
+                        {
+                            LBPonude.Items.Add(ponuda);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Trenutno nemamo trazeni auto u ponudi.");
+                    ocistiComboBoxove();
+                    napuniComboBoxove();
+                }
             }
-            else
-            {
-                MessageBox.Show("Trenutno nemamo trazeni auto u ponudi.");
-                ocistiComboBoxove();
+            else {
+                MessageBox.Show("Ne smete ostavljati prazna polja.");
             }
+            
         }
 
         public void ocistiComboBoxove() {
@@ -166,6 +198,7 @@ namespace car_rental_project
             CBoxPogon.Items.Clear();
             CBoxMenjac.Items.Clear();
             CBoxModel.Items.Clear();
+            CBoxMarka.Items.Clear();
         }
 
         public int izracunajCenuZaOpsegDatuma(int cenaPoDanu, DateTime datumOd, DateTime datumDo) {
