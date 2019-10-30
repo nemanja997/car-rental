@@ -1,2 +1,2 @@
-# car-rental
-Desktop Windows Forms application for keeping track of renting cars for user and administrator
+# Car rental
+Desktop Windows Forms application for administrating car renting business.
