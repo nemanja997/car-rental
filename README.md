@@ -2,11 +2,11 @@
 
 # Car rental
 Desktop Windows Forms application for administrating car renting business.<br>
-The app has Administrator and User roles.
-Administrator:
+The app has Administrator and User roles. <br>
+**Administrator:**
 * Can perform CRUD operations on users, reservations and available cars.<br>
 * Can see statistics about renting in past 3 months.<br>
-User:
+**User:** <br>
 * Can delete its reservations and make new ones.<br>
 
 ## Technologies:
